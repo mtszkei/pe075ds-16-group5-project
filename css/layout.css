@@ -1,5 +1,6 @@
 html {
-    font-family: "Google Sans Code", monospace;
+    /* font-family: "Google Sans Code", monospace; */
+    font-family: "Noto Sans TC", sans-serif;
 }
 
 html,
@@ -12,6 +13,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+body.menu-open .lang-switch {
+    opacity: 0;
+    pointer-events: none;
 }
 
 main {
@@ -102,72 +108,103 @@ main {
     gap: 16px;
 }
 
-/* Login */
-.login {
+/* Language switch */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 8px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #666;
+
+    padding: 4px 6px;
+    border-radius: 4px;
+
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: rgb(227, 127, 104);
+    background: rgba(227, 127, 104, 0.1);
+}
+
+.lang-sep {
+    color: #aaa;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+/* Login and Cart btn */
+.action-item {
     display: flex;
     align-items: center;
 }
 
-.login a {
-    position: relative;
+.action-item a,
+.action-item button {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 6px;
-    border-radius: 6px;
-    transition: background 0.25s ease;
-}
+    gap: 4px;
 
-.login img {
-    width: 26px;
-    height: 26px;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-
-.login a:hover img {
-    transform: scale(1.08);
-}
-
-
-/* Cart */
-.cart {
-    position: relative;
-}
-
-.cart-btn {
-    position: relative;
     background: none;
     border: none;
     padding: 6px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    text-decoration: none;
+    color: #555;
 }
 
-.cart-btn img {
+.action-item img {
     width: 26px;
     height: 26px;
     display: block;
+    object-fit: contain;
     transition: transform 0.2s ease;
 }
 
-.cart-btn:hover img {
+.action-label {
+    font-size: 0.75rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.action-item a:hover img,
+.action-item button:hover img {
     transform: scale(1.08);
+}
+
+.action-item a:hover .action-label,
+.action-item button:hover .action-label {
+    color: rgb(227, 127, 104);
+}
+
+.cart-btn {
+    position: relative;
 }
 
 .cart-count {
     position: absolute;
-    top: -4px;
+    top: -2px;
     right: -6px;
+
     background: rgb(227, 127, 104);
     color: #fff;
     font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 50%;
     line-height: 1;
+
+    padding: 2px 6px;
+    border-radius: 999px;
 }
 
 /* Cart Dropdown */
@@ -287,7 +324,11 @@ main {
     flex-direction: column;
     gap: 20px;
     transition: right 0.3s ease;
-    border-left: 1px solid rgba(128, 128, 128, 0.3)
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    z-index: 999;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .mobile-menu a {
@@ -330,27 +371,19 @@ main {
     transform: translateX(-25vw);
 }
 
-@media (min-width: 769px) {
-    .mobile-menu {
-        right: -100% !important;
-        visibility: hidden;
-    }
-
-    .nav-actions.shift-left {
-        transform: none !important;
-    }
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 998;
 }
 
-/* Navbar Responsive */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none;
-    }
-
-    .navbar-toggle {
-        display: block;
-    }
-
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Footer */
@@ -444,8 +477,33 @@ main {
     border-top: 1px solid #e5e5e5;
 }
 
-/* Footer Responsive */
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 910px) {
+
+    /* Header */
+    .nav-menu {
+        display: none;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .action-label {
+        font-size: 0.7rem;
+    }
+
+    .login span {
+        font-size: 0.7rem;
+    }
+
+    /* Language switch */
+    .lang-btn {
+        font-size: 0.8rem;
+        padding: 3px 4px;
+    }
+
+    /* Footer */
     .footer-container {
         grid-template-columns: 1fr;
         gap: 24px;

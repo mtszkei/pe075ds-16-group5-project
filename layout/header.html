@@ -9,25 +9,38 @@
 
         <!-- Desktop Menu -->
         <ul class="nav-menu">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/shop.html">Shop</a></li>
-            <li><a href="/contactus.html">Contact Us</a></li>
+            <li><a href="/index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="/shop.html" data-i18n="nav.shop">Shop</a></li>
+            <li><a href="/aboutus.html" data-i18n="nav.about">About</a></li>
+            <li><a href="/contactus.html" data-i18n="nav.contact">Contact Us</a></li>
         </ul>
 
         <!-- Right Actions -->
         <div class="nav-actions">
-            <!-- login -->
-             <div class="login">
-                <a href="/login.html"><img src="/src/images/symbols/person-circle.svg"></a>
-                <span>Sign in / Sign up</span>
-             </div>
+
+            <!-- Language switch -->
+            <div class="lang-switch">
+                <button class="lang-btn">繁</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn">EN</button>
+            </div>
+
+            <!-- Login -->
+            <div class="action-item login">
+                <a href="/login.html" class="action-icon">
+                    <img src="/src/images/symbols/person-circle.svg" alt="login">
+                    <span class="action-label" data-i18n="login">LOGIN</span>
+                </a>
+
+            </div>
             <!-- Cart -->
-            <div class="cart">
+            <div class="action-item cart">
                 <button class="cart-btn">
                     <img src="/src/images/symbols/cart.svg">
-                    <span class="cart-count">2</span>
+                    <span class="cart-count">3</span>
+                    <span class="action-label" data-i18n="cart">CART</span>
                 </button>
+
 
                 <div class="cart-dropdown">
                     <div class="cart-item">
@@ -67,14 +80,15 @@
                 ☰
             </button>
         </div>
-
     </nav>
 
     <!-- Mobile Menu -->
     <aside class="mobile-menu">
         <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
         <a href="/shop.html">Shop</a>
+        <a href="/about.html">About</a>
         <a href="/contactus.html">Contact Us</a>
     </aside>
+    <div class="menu-overlay"></div>
+
 </header>

@@ -4,7 +4,6 @@
     "name": "Modern Fabric Sofa",
     "category": "Sofa",
     "price": 4999,
-    "currency": "HKD",
     "image": "/src/images/products/sofa-1.jpg",
     "description": "A modern fabric sofa with soft cushions, suitable for living rooms.",
     "stock": 12
@@ -14,7 +13,6 @@
     "name": "Wooden Dining Table",
     "category": "Table",
     "price": 3299,
-    "currency": "HKD",
     "image": "/src/images/products/table-1.jpg",
     "description": "Solid wood dining table with a minimalist design.",
     "stock": 8
@@ -24,7 +22,6 @@
     "name": "Comfort Office Chair",
     "category": "Chair",
     "price": 1299,
-    "currency": "HKD",
     "image": "/src/images/products/chair-1.jpg",
     "description": "Ergonomic office chair suitable for long working hours.",
     "stock": 20
@@ -34,7 +31,6 @@
     "name": "Bedside Storage Cabinet",
     "category": "Cabinet",
     "price": 899,
-    "currency": "HKD",
     "image": "/src/images/products/cabinet-1.jpg",
     "description": "Compact bedside cabinet with two storage drawers.",
     "stock": 15
@@ -44,7 +40,15 @@
     "name": "Minimalist Floor Lamp",
     "category": "Lighting",
     "price": 699,
-    "currency": "HKD",
+    "image": "/src/images/products/lamp-1.jpg",
+    "description": "Warm light floor lamp for bedroom or living area.",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "name": "Minimalist Floor Lamp",
+    "category": "Sofa",
+    "price": 699,
     "image": "/src/images/products/lamp-1.jpg",
     "description": "Warm light floor lamp for bedroom or living area.",
     "stock": 25
