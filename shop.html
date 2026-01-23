@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
         rel="stylesheet">
-        
+
 </head>
 
 <body>
@@ -22,16 +22,158 @@
 
     <main>
         <section>
-            <div class="sort">
-
-            </div>
-            <div class="filter-itemList">
+            <div class="filter-and-items">
                 <div class="filter">
-
+                    <div class="sort">
+                        <span class="filter-title">Sort</span>
+                        <button id="sortByNewest" class="sortBtn">Newest or Oldest ▼</button>
+                        <button id="sortbyPrice" class="sortBtn">Price Higher or Lower ▼</button>
+                    </div>
+                    <span class="filter-title">Category</span>
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="Sofa">
+                                Sofa
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="Table">
+                                Table
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="Chair">
+                                Chair
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="Cabinet">
+                                Cabinet
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="Lighting">
+                                Lighting
+                            </label>
+                        </li>
+                    </ul>
                 </div>
-                <div class="itemList">
-
+                <div class="item-list">
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="item">
+                        <div class="item-image-container">
+                            <img src="${item.image_path}" loading="lazy" />
+                        </div>
+                        <h3>item name</h3>
+                        <p>Price: $?,???</p>
+                        <a href="/shop/item.html?id=1" class="buy-link">View detail</a>
+                        <button>Add to cart</button>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -42,4 +184,5 @@
 
 <script src="/js/layout.js"></script>
 <script src="/js/shop.js"></script>
+
 </html>
