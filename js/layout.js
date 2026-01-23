@@ -43,14 +43,46 @@ function initHeader() {
     });
 
     document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", async () => {
             const lang = btn.textContent === "繁" ? "zh" : "en";
-            setLanguage(lang);
 
-            document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+            showLoader();
+
+            await withMinLoading(setLanguage(lang), 500);
+
+            hideLoader();
+
+            document.querySelectorAll(".lang-btn").forEach(b =>
+                b.classList.remove("active")
+            );
             btn.classList.add("active");
         });
     });
+}
+
+function showLoader() {
+    document.querySelector(".page-loader")?.classList.add("active");
+    document.body.classList.add("loading");
+}
+
+function hideLoader() {
+    document.querySelector(".page-loader")?.classList.remove("active");
+    document.body.classList.remove("loading");
+}
+
+async function withMinLoading(promise, minTime = 1000) {
+    const start = Date.now();
+
+    const result = await promise;
+
+    const elapsed = Date.now() - start;
+    const remaining = minTime - elapsed;
+
+    if (remaining > 0) {
+        await new Promise(resolve => setTimeout(resolve, remaining));
+    }
+
+    return result;
 }
 
 async function setLanguage(lang) {
