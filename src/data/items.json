@@ -1,425 +1,442 @@
 [
- {
-   "id": 1,
-   "name": "HEMLINGBY Sofa",
-   "category": "Sofa",
-   "price": 1499,
-   "image": [
-     "/src/images/items/HEMLINGBY-1a.webp",
-     "/src/images/items/HEMLINGBY-1b.webp"
-   ],
-   "description": "HEMLINGBY sofa is ideal wherever space is limited - in front of a bay window, in a student flat or as a comfy retreat under a loft bed. The durable, dark grey fabric cover will withstand everyday wear.",
-   "measurements": [
-     {
-       "max_depth": 715,
-       "max_width": 1450,
-       "max_height": 715
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 12,
-   "review": 5
- },
- {
-   "id": 2,
-   "name": "KIVIK Sofa",
-   "category": "Sofa",
-   "price": 3199,
-   "image": [
-     "/src/images/items/KIVIK-1a.webp",
-     "/src/images/items/KIVIK-1b.webp"
-   ],
-   "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socialising and relaxation.",
-   "measurements": [
-     {
-       "max_depth": 950,
-       "max_width": 1900,
-       "max_height": 830
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 20,
-   "review": 10
- },
   {
-   "id": 3,
-   "name": "LANDSKRONA Sofa",
-   "category": "Sofa",
-   "price": 5299,
-   "image": [
-     "/src/images/items/LANDSKRONA-1a.webp",
-     "/src/images/items/LANDSKRONA-1b.webp"
-   ],
-   "description": "Luxury made our way. We used resilient foam filling for comfort, thick grain leather on the contact areas – because it looks amazing, and durable coated fabric elsewhere to keep the price down.",
-   "measurements": [
-     {
-       "max_depth": 890,
-       "max_width": 1640,
-       "max_height": 780
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 8,
-   "review": 10
- },
+    "id": 1,
+    "brand": "HEMLINGBY",
+    "name": "two-seat sofa",
+    "category": "Sofa",
+    "price": 1499,
+    "image": [
+      "/src/images/items/HEMLINGBY-1a.webp",
+      "/src/images/items/HEMLINGBY-1b.webp"
+    ],
+    "description": "HEMLINGBY sofa is ideal wherever space is limited - in front of a bay window, in a student flat or as a comfy retreat under a loft bed. The durable, dark grey fabric cover will withstand everyday wear.",
+    "measurements": [
+      {
+        "max_depth": 715,
+        "max_width": 1450,
+        "max_height": 715
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 12,
+    "review": 5
+  },
   {
-   "id": 4,
-   "name": "JÄTTEBO Sofa",
-   "category": "Sofa",
-   "price": 3500,
-   "image": [
-     "/src/images/items/JATTEBO-1a.webp",
-     "/src/images/items/JATTEBO-1b.webp"
-   ],
-   "description": "Enjoy long movie nights and comfy socialising with friends in JÄTTEBO modular sofa. Combine this seating module with storage with other modules to create a customised sofa for you and your home.",
-   "measurements": [
-     {
-       "max_depth": 950,
-       "max_width": 950,
-       "max_height": 710
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 15,
-   "review": 3
- },
+    "id": 2,
+    "brand": "KIVIK",
+    "name": "two-seat sofa",
+    "category": "Sofa",
+    "price": 3199,
+    "image": [
+      "/src/images/items/KIVIK-1a.webp",
+      "/src/images/items/KIVIK-1b.webp"
+    ],
+    "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socialising and relaxation.",
+    "measurements": [
+      {
+        "max_depth": 950,
+        "max_width": 1900,
+        "max_height": 830
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 4,
+    "review": 4
+  },
   {
-   "id": 5,
-   "name": "GLOSTAD Sofa",
-   "category": "Sofa",
-   "price": 990,
-   "image": [
-     "/src/images/items/GLOSTAD-1a.webp",
-     "/src/images/items/GLOSTAD-1b.webp"
-   ],
-   "description": "It should be easy to get a sofa and GLOSTAD sofa is easy to buy, bring home, assemble and live with. So you can enjoy more time and space to hang out with friends and family and do other important things.",
-   "measurements": [
-     {
-       "max_depth": 780,
-       "max_width": 1210,
-       "max_height": 680
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 7,
-   "review": 15
- },
+    "id": 3,
+    "brand": "LANDSKRONA",
+    "name": " 3-seat sofa",
+    "category": "Sofa",
+    "price": 5999,
+    "image": [
+      "/src/images/items/LANDSKRONA-1a.webp",
+      "/src/images/items/LANDSKRONA-1b.webp"
+    ],
+    "description": "Luxury made our way. We used resilient foam filling for comfort, thick grain leather on the contact areas – because it looks amazing, and durable coated fabric elsewhere to keep the price down.",
+    "measurements": [
+      {
+        "max_depth": 890,
+        "max_width": 1640,
+        "max_height": 780
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 0,
+    "review": 5
+  },
   {
-   "id": 6,
-   "name": "SONGESAND Bed",
-   "category": "Bed",
-   "price": 1699,
-   "image": [
-     "/src/images/items/SONGESAND-1a.webp",
-     "/src/images/items/SONGESAND-1b.webp"
-   ],
-   "description": "This classic bed frame will look great with your choice of textiles and bedroom furniture. You can even complete the look with other products from the SONGESAND series.",
-   "measurements": [
-     {
-       "max_depth": 1960,
-       "max_width": 1040,
-       "max_height": 950
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 20,
-   "review": 12
- },
+    "id": 4,
+    "brand": "JÄTTEBO",
+    "name": " 1,5-seat module with storage",
+    "category": "Sofa",
+    "price": 3500,
+    "image": [
+      "/src/images/items/JATTEBO-1a.webp",
+      "/src/images/items/JATTEBO-1b.webp"
+    ],
+    "description": "Enjoy long movie nights and comfy socialising with friends in JÄTTEBO modular sofa. Combine this seating module with storage with other modules to create a customised sofa for you and your home.",
+    "measurements": [
+      {
+        "max_depth": 950,
+        "max_width": 950,
+        "max_height": 710
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 15,
+    "review": 3
+  },
   {
-   "id": 7,
-   "name": "SLATTUMD Bed",
-   "category": "Bed",
-   "price": 799,
-   "image": [
-     "/src/images/items/SLATTUM-1a.webp",
-     "/src/images/items/SLATTUM-1b.webp"
-   ],
-   "description": "You can easily vacuum under the bed frame to keep the space clean and dust-free. The simple and versatile design coordinates well with other bedroom furniture and fits perfectly in any modern bedroom.",
-   "measurements": [
-     {
-       "max_depth": 1960,
-       "max_width": 960,
-       "max_height": 850
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 15,
-   "review": 8
- },
- {
-   "id": 8,
-   "name": "BRUKSVARA Bed",
-   "category": "Bed",
-   "price": 899,
-   "image": [
-     "/src/images/items/BRUKSVARA-1a.webp",
-     "/src/images/items/BRUKSVARA-1b.webp"
-   ],
-   "description": "The headboard with its soft pad is comfortable to lean against while reading or watching TV in bed. The metal legs are strong and stable and add to the bed´s character.",
-   "measurements": [
-     {
-       "max_depth": 1950,
-       "max_width": 970,
-       "max_height": 880
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 18,
-   "review": 13
- },
- {
-   "id": 9,
-   "name": "STJÄRNÖ Bed",
-   "category": "Bed",
-   "price": 1199,
-   "image": [
-     "/src/images/items/STJARNO-1a.webp",
-     "/src/images/items/STJARNO-1b.webp"
-   ],
-   "description": "Whether you prefer a classically romantic style or a modern and bold one, your existing bed textiles and bedroom furniture will go perfectly with this bed frame.",
-   "measurements": [
-     {
-       "max_depth": 1990,
-       "max_width": 1000,
-       "max_height": 1180
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 11,
-   "review": 5
- },
- {
-   "id": 10,
-   "name": "TARVA Bed",
-   "category": "Bed",
-   "price": 990,
-   "image": [
-     "/src/images/items/TARVA-1a.webp",
-     "/src/images/items/TARVA-1b.webp"
-   ],
-   "description": "TARVA bed frame is a modern example of Scandinavian furniture tradition – a simple design and untreated wood. A timeless expression mixes nicely with a variety of other styles and furniture.",
-   "measurements": [
-     {
-       "max_depth": 1990,
-       "max_width": 990,
-       "max_height": 920
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 10,
-   "review": 5
- },
- {
-   "id": 11,
-   "name": "MICKE Desk",
-   "category": "Desk",
-   "price": 699,
-   "image": [
-     "/src/images/items/MICKE-1a.webp",
-     "/src/images/items/MICKE-1b.webp"
-   ],
-   "description": "It’s easy to keep sockets and cables out of sight but close at hand with the cable outlet at the back. You can mount the storage unit to the right or left, according to your space or preference.",
-   "measurements": [
-     {
-       "max_depth": 500,
-       "max_width": 1050,
-       "max_height": 750
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 20,
-   "review": 14
- },
- {
-   "id": 12,
-   "name": "LAGKAPTEN Desk",
-   "category": "Desk",
-   "price": 998,
-   "image": [
-     "/src/images/items/LAGKAPTEN-1a.webp",
-     "/src/images/items/LAGKAPTEN-1b.webp"
-   ],
-   "description": "The tabletop has pre-drilled holes to make it easier to attach to the underframe.",
-   "measurements": [
-     {
-       "max_depth": 600,
-       "max_width": 1200,
-       "max_height": 730
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 15,
-   "review": 8
- },
- {
-   "id": 13,
-   "name": "SEGRARE Desk",
-   "category": "Desk",
-   "price": 899,
-   "image": [
-     "/src/images/items/SEGRARE-1a.webp",
-     "/src/images/items/SEGRARE-1b.webp"
-   ],
-   "description": "Do you work at home? SEGRARE sit/stand table makes your working day comfier. Use the crank handle to adjust the height quietly and smoothly – and enjoy a healthy working day at home, even in smaller areas.",
-   "measurements": [
-     {
-       "max_depth": 600,
-       "max_width": 1100,
-       "max_height": 1250
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 30,
-   "review": 14
- },
- {
-   "id": 14,
-   "name": "ALEX Desk",
-   "category": "Desk",
-   "price": 1199,
-   "image": [
-     "/src/images/items/ALEX-1a.webp",
-     "/src/images/items/ALEX-1b.webp"
-   ],
-   "description": "Built-in cable management for collecting cables and cords; out of sight but close at hand. Drawer stops prevent the drawers from being pulled out too far.",
-   "measurements": [
-     {
-       "max_depth": 480,
-       "max_width": 1000,
-       "max_height": 800
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 25,
-   "review": 20
- },
- {
-   "id": 15,
-   "name": "MULLSJÖ Desk",
-   "category": "Desk",
-   "price": 1799,
-   "image": [
-     "/src/images/items/MULLSJO-1a.webp",
-     "/src/images/items/MULLSJO-1b.webp"
-   ],
-   "description": "Stylish work-from-home desk with a combination of modern design and smart storage solutions. Helps keep your workspace clutter-free and organised – so you can stay focused and productive.",
-   "measurements": [
-     {
-       "max_depth": 700,
-       "max_width": 1350,
-       "max_height": 760
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 15,
-   "review": 8
- },
- {
-   "id": 16,
-   "name": "BAGGEBO Bookcase",
-   "category": "Bookcase",
-   "price": 249,
-   "image": [
-     "/src/images/items/BAGGEBO-1a.webp",
-     "/src/images/items/BAGGEBO-1b.webp"
-   ],
-   "description": "The BAGGEBO series looks great as it is – and even better filled with your stuff. This bookcase is perfect for both binders and your favourite reads. Fun to personalise with various storage boxes.",
-   "measurements": [
-     {
-       "max_depth": 250,
-       "max_width": 500,
-       "max_height": 1600
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 28,
-   "review": 15
- },
- {
-   "id": 17,
-   "name": "BILLY Bookcase",
-   "category": "Bookcase",
-   "price": 1299,
-   "image": [
-     "/src/images/items/BILLY-1a.webp",
-     "/src/images/items/BILLY-1b.webp"
-   ],
-   "description": "BILLY bookcase is a beloved icon that, thanks to its versatility, can be used in many ways at home. With panel/glass doors you can display items and hide clutter.",
-   "measurements": [
-     {
-       "max_depth": 300,
-       "max_width": 800,
-       "max_height": 2020
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 14,
-   "review": 8
- },
- {
-   "id": 18,
-   "name": "VIHALS Bookcase",
-   "category": "Bookcase",
-   "price": 1499,
-   "image": [
-     "/src/images/items/VIHALS-1a.webp",
-     "/src/images/items/VIHALS-1b.webp"
-   ],
-   "description": "VIHALS storage series has a cohesive look that connects the rooms throughout your home. Use this versatile piece on its own or pair it with a VIHALS buddy - the shelves align for a uniform expression.",
-   "measurements": [
-     {
-       "max_depth": 370,
-       "max_width": 1050,
-       "max_height": 1400
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 20,
-   "review": 10
- },
- {
-   "id": 19,
-   "name": "HEMNES Bookcase",
-   "category": "Bookcase",
-   "price": 3799,
-   "image": [
-     "/src/images/items/HEMNES-1a.webp",
-     "/src/images/items/HEMNES-1b.webp"
-   ],
-   "description": "This cabinet, made of solid wood, offers plenty of storage and will bring a warm feeling to your home. If you like the style, you can combine it with other furniture in the HEMNES series.",
-   "measurements": [
-     {
-       "max_depth": 370,
-       "max_width": 900,
-       "max_height": 1980
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 18,
-   "review": 16
- },
- {
-   "id": 20,
-   "name": "SKRUVBY Bookcase",
-   "category": "Bookcase",
-   "price": 599,
-   "image": [
-     "/src/images/items/SKRUVBY-1a.webp",
-     "/src/images/items/SKRUVBY-1b.webp"
-   ],
-   "description": "The SKRUVBY series has a traditional look with solitaire storage units that can be coordinated. This bookcase adds a natural and warm feel to the room – perfect for books and other nice things.",
-   "measurements": [
-     {
-       "max_depth": 375,
-       "max_width": 600,
-       "max_height": 1400
-     }
-   ],
-   "createdAt": "2026-01-23",
-   "stock": 16,
-   "review": 7
- }
+    "id": 5,
+    "brand": "GLOSTAD",
+    "name": " 2-seat sofa",
+    "category": "Sofa",
+    "price": 990,
+    "image": [
+      "/src/images/items/GLOSTAD-1a.webp",
+      "/src/images/items/GLOSTAD-1b.webp"
+    ],
+    "description": "It should be easy to get a sofa and GLOSTAD sofa is easy to buy, bring home, assemble and live with. So you can enjoy more time and space to hang out with friends and family and do other important things.",
+    "measurements": [
+      {
+        "max_depth": 780,
+        "max_width": 1210,
+        "max_height": 680
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 7,
+    "review": 3
+  },
+  {
+    "id": 6,
+    "brand": "SONGESAND",
+    "name": "bed frame with 2 storage boxes,",
+    "category": "Bed",
+    "price": 1699,
+    "image": [
+      "/src/images/items/SONGESAND-1a.webp",
+      "/src/images/items/SONGESAND-1b.webp"
+    ],
+    "description": "This classic bed frame will look great with your choice of textiles and bedroom furniture. You can even complete the look with other products from the SONGESAND series.",
+    "measurements": [
+      {
+        "max_depth": 1960,
+        "max_width": 1040,
+        "max_height": 950
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 20,
+    "review": 4
+  },
+  {
+    "id": 7,
+    "brand": "SLATTUMD",
+    "name": "upholstered bed frame",
+    "category": "Bed",
+    "price": 799,
+    "image": [
+      "/src/images/items/SLATTUM-1a.webp",
+      "/src/images/items/SLATTUM-1b.webp"
+    ],
+    "description": "You can easily vacuum under the bed frame to keep the space clean and dust-free. The simple and versatile design coordinates well with other bedroom furniture and fits perfectly in any modern bedroom.",
+    "measurements": [
+      {
+        "max_depth": 1960,
+        "max_width": 960,
+        "max_height": 850
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 15,
+    "review": 5
+  },
+  {
+    "id": 8,
+    "brand": "BRUKSVARA",
+    "name": "bed frame",
+    "category": "Bed",
+    "price": 899,
+    "image": [
+      "/src/images/items/BRUKSVARA-1a.webp",
+      "/src/images/items/BRUKSVARA-1b.webp"
+    ],
+    "description": "The headboard with its soft pad is comfortable to lean against while reading or watching TV in bed. The metal legs are strong and stable and add to the bed´s character.",
+    "measurements": [
+      {
+        "max_depth": 1950,
+        "max_width": 970,
+        "max_height": 880
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 18,
+    "review": 3
+  },
+  {
+    "id": 9,
+    "brand": "STJÄRNÖ",
+    "name": " Bed",
+    "category": "Bed",
+    "price": 1199,
+    "image": [
+      "/src/images/items/STJARNO-1a.webp",
+      "/src/images/items/STJARNO-1b.webp"
+    ],
+    "description": "Whether you prefer a classically romantic style or a modern and bold one, your existing bed textiles and bedroom furniture will go perfectly with this bed frame.",
+    "measurements": [
+      {
+        "max_depth": 1990,
+        "max_width": 1000,
+        "max_height": 1180
+      }
+    ],
+    "createdAt": "2026-01-23",
+    "stock": 11,
+    "review": 5
+  },
+  {
+    "id": 10,
+    "brand": "TARVA",
+    "name": "bed frame",
+    "category": "Bed",
+    "price": 990,
+    "image": [
+      "/src/images/items/TARVA-1a.webp",
+      "/src/images/items/TARVA-1b.webp"
+    ],
+    "description": "TARVA bed frame is a modern example of Scandinavian furniture tradition – a simple design and untreated wood. A timeless expression mixes nicely with a variety of other styles and furniture.",
+    "measurements": [
+      {
+        "max_depth": 1990,
+        "max_width": 990,
+        "max_height": 920
+      }
+    ],
+    "createdAt": "2026-01-22",
+    "stock": 10,
+    "review": 5
+  },
+  {
+    "id": 11,
+    "brand": "MICKE",
+    "name": " desk",
+    "category": "Desk",
+    "price": 699,
+    "image": [
+      "/src/images/items/MICKE-1a.webp",
+      "/src/images/items/MICKE-1b.webp"
+    ],
+    "description": "It’s easy to keep sockets and cables out of sight but close at hand with the cable outlet at the back. You can mount the storage unit to the right or left, according to your space or preference.",
+    "measurements": [
+      {
+        "max_depth": 500,
+        "max_width": 1050,
+        "max_height": 750
+      }
+    ],
+    "createdAt": "2026-01-22",
+    "stock": 20,
+    "review": 4
+  },
+  {
+    "id": 12,
+    "brand": "LAGKAPTEN",
+    "name": "desk",
+    "category": "Desk",
+    "price": 998,
+    "image": [
+      "/src/images/items/LAGKAPTEN-1a.webp",
+      "/src/images/items/LAGKAPTEN-1b.webp"
+    ],
+    "description": "The tabletop has pre-drilled holes to make it easier to attach to the underframe.",
+    "measurements": [
+      {
+        "max_depth": 600,
+        "max_width": 1200,
+        "max_height": 730
+      }
+    ],
+    "createdAt": "2026-01-22",
+    "stock": 15,
+    "review": 3
+  },
+  {
+    "id": 13,
+    "brand": "SEGRARE",
+    "name": "desk sit/stand",
+    "category": "Desk",
+    "price": 899,
+    "image": [
+      "/src/images/items/SEGRARE-1a.webp",
+      "/src/images/items/SEGRARE-1b.webp"
+    ],
+    "description": "Do you work at home? SEGRARE sit/stand table makes your working day comfier. Use the crank handle to adjust the height quietly and smoothly – and enjoy a healthy working day at home, even in smaller areas.",
+    "measurements": [
+      {
+        "max_depth": 600,
+        "max_width": 1100,
+        "max_height": 1250
+      }
+    ],
+    "createdAt": "2026-01-22",
+    "stock": 30,
+    "review": 4
+  },
+  {
+    "id": 14,
+    "brand": "ALEX",
+    "name": "desk",
+    "category": "Desk",
+    "price": 1199,
+    "image": [
+      "/src/images/items/ALEX-1a.webp",
+      "/src/images/items/ALEX-1b.webp"
+    ],
+    "description": "Built-in cable management for collecting cables and cords; out of sight but close at hand. Drawer stops prevent the drawers from being pulled out too far.",
+    "measurements": [
+      {
+        "max_depth": 480,
+        "max_width": 1000,
+        "max_height": 800
+      }
+    ],
+    "createdAt": "2026-01-21",
+    "stock": 25,
+    "review": 2
+  },
+  {
+    "id": 15,
+    "brand": "MULLSJÖ",
+    "name": "desk",
+    "category": "Desk",
+    "price": 1799,
+    "image": [
+      "/src/images/items/MULLSJO-1a.webp",
+      "/src/images/items/MULLSJO-1b.webp"
+    ],
+    "description": "Stylish work-from-home desk with a combination of modern design and smart storage solutions. Helps keep your workspace clutter-free and organised – so you can stay focused and productive.",
+    "measurements": [
+      {
+        "max_depth": 700,
+        "max_width": 1350,
+        "max_height": 760
+      }
+    ],
+    "createdAt": "2026-01-21",
+    "stock": 15,
+    "review": 3
+  },
+  {
+    "id": 16,
+    "brand": "BAGGEBO",
+    "name": "bookcase",
+    "category": "Bookcase",
+    "price": 249,
+    "image": [
+      "/src/images/items/BAGGEBO-1a.webp",
+      "/src/images/items/BAGGEBO-1b.webp"
+    ],
+    "description": "The BAGGEBO series looks great as it is – and even better filled with your stuff. This bookcase is perfect for both binders and your favourite reads. Fun to personalise with various storage boxes.",
+    "measurements": [
+      {
+        "max_depth": 250,
+        "max_width": 500,
+        "max_height": 1600
+      }
+    ],
+    "createdAt": "2026-01-21",
+    "stock": 28,
+    "review": 5
+  },
+  {
+    "id": 17,
+    "brand": "BILLY",
+    "name": "bookcase",
+    "category": "Bookcase",
+    "price": 1299,
+    "image": [
+      "/src/images/items/BILLY-1a.webp",
+      "/src/images/items/BILLY-1b.webp"
+    ],
+    "description": "BILLY bookcase is a beloved icon that, thanks to its versatility, can be used in many ways at home. With panel/glass doors you can display items and hide clutter.",
+    "measurements": [
+      {
+        "max_depth": 300,
+        "max_width": 800,
+        "max_height": 2020
+      }
+    ],
+    "createdAt": "2026-01-20",
+    "stock": 14,
+    "review": 3
+  },
+  {
+    "id": 18,
+    "brand": "VIHALS",
+    "name": "bookcase",
+    "category": "Bookcase",
+    "price": 1499,
+    "image": [
+      "/src/images/items/VIHALS-1a.webp",
+      "/src/images/items/VIHALS-1b.webp"
+    ],
+    "description": "VIHALS storage series has a cohesive look that connects the rooms throughout your home. Use this versatile piece on its own or pair it with a VIHALS buddy - the shelves align for a uniform expression.",
+    "measurements": [
+      {
+        "max_depth": 370,
+        "max_width": 1050,
+        "max_height": 1400
+      }
+    ],
+    "createdAt": "2026-01-20",
+    "stock": 20,
+    "review": 5
+  },
+  {
+    "id": 19,
+    "brand": "HEMNES",
+    "name": "bookcase",
+    "category": "Bookcase",
+    "price": 3799,
+    "image": [
+      "/src/images/items/HEMNES-1a.webp",
+      "/src/images/items/HEMNES-1b.webp"
+    ],
+    "description": "This cabinet, made of solid wood, offers plenty of storage and will bring a warm feeling to your home. If you like the style, you can combine it with other furniture in the HEMNES series.",
+    "measurements": [
+      {
+        "max_depth": 370,
+        "max_width": 900,
+        "max_height": 1980
+      }
+    ],
+    "createdAt": "2026-01-20",
+    "stock": 4,
+    "review": 4
+  },
+  {
+    "id": 20,
+    "brand": "SKRUVBY",
+    "name": "bookcase",
+    "category": "Bookcase",
+    "price": 599,
+    "image": [
+      "/src/images/items/SKRUVBY-1a.webp",
+      "/src/images/items/SKRUVBY-1b.webp"
+    ],
+    "description": "The SKRUVBY series has a traditional look with solitaire storage units that can be coordinated. This bookcase adds a natural and warm feel to the room – perfect for books and other nice things.",
+    "measurements": [
+      {
+        "max_depth": 375,
+        "max_width": 600,
+        "max_height": 1400
+      }
+    ],
+    "createdAt": "2026-01-20",
+    "stock": 20,
+    "review": 3
+  }
 ]
-
-
-
