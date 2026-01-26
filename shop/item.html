@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item</title>
+
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/shop/item.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="item-info">
+            <div class="item-img">
+                <div class="item-img-carousel">
+                    <img id="prev-btn" src="/src/images/symbols/prev.png">
+                    <div class="img-contanier">
+                        <img class="item-img-carousel-main" src="/src/images/items/sample.webp" loading="lazy" />
+                    </div>
+                    <img id="next-btn" src="/src/images/symbols/next.png">
+                </div>
+                <div class="item-img-list">
+                    <img class="item-img-carousel-sub" src="/src/images/items/sample.webp" loading="lazy" />
+                    <img class="item-img-carousel-sub" src="/src/images/items/sample2.webp" loading="lazy" />
+                </div>
+            </div>
+            <div class="item-spec">
+        </section>
+        <section class="item-buy">
+            <span id="item-name">item name</span>
+            <span id="item-price">item price</span>
+            <span id="review">★★★★☆</span>
+            <div class="service-list">
+                <span class="service">Available for store and supermarket pick-up</span>
+                <span class="service">10-year guarantee</span>
+            </div>
+            <button id="add-to-cart-btn">Add to cart</button>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+<script src="/js/layout.js"></script>
+<script src="/shop/item.js"></script>
+
+</html>
