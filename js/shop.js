@@ -115,8 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </a>
 
                 <button
+                    data-id="${item.id}"
                     ${isOutOfStock ? "disabled" : ""}
-                    class="${isOutOfStock ? "btn-disabled" : ""}">
+                    class="add-to-cart-btn ${isOutOfStock ? "btn-disabled" : ""}">
                     Add to cart
                 </button>
             </div>
@@ -164,8 +165,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function bindAddToCart(containerSelector = ".item-list") {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        container.addEventListener("click", e => {
+            const btn = e.target.closest(".add-to-cart-btn");
+            if (!btn || btn.disabled) return;
+
+            const itemId = Number(btn.dataset.id);
+            if (!itemId) return;
+
+            addToCart(itemId, 1);
+
+        });
+    }
+
     //=====Run function=====
     loadItems();
-
+    bindAddToCart();
 })
 

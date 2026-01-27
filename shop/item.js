@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 reviewEl.appendChild(star);
             };
-            
+
             const scoreText = document.createElement("span");
             scoreText.className = "review-score";
             scoreText.textContent = `${rating} / ${maxStars}`;
@@ -112,6 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
             addToCartBtn.disabled = true;
             addToCartBtn.textContent = "Out of Stock";
             addToCartBtn.classList.add("btn-disabled");
+        }
+
+        if (addToCartBtn && item.stock > 0) {
+            addToCartBtn.addEventListener("click", () => {
+
+                addToCartBtn.classList.remove("animate");
+                void addToCartBtn.offsetWidth;
+                addToCartBtn.classList.add("animate");
+
+                addToCart(item.id, 1);
+            });
         }
 
         const specEl = document.querySelector(".item-spec");

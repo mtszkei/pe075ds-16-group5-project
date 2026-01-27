@@ -120,7 +120,7 @@ main {
 /* buy container */
 .item-buy {
     position: sticky;
-    top: 20px;
+    top: 90px;
 
     display: flex;
     flex-direction: column;
@@ -157,11 +157,9 @@ main {
 }
 
 #item-price {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #c62828;
-    margin-top: 6px;
-    margin-bottom: 4px;
+    color: #e01212;
 }
 
 #review {
@@ -196,22 +194,42 @@ main {
 .service-list {
     display: flex;
     flex-direction: column;
+    gap: 10px
 }
 
 .service-title {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #111;
-
     letter-spacing: 0.02em;
-    border-bottom: 2px solid black;
 
-    margin-top: 20px;
+    margin-top: 22px;
+    padding-bottom: 6px;
+
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.25);
 }
 
 .service {
     position: relative;
-    line-height: 1.7;
+    line-height: 1.5;
+
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    background: rgba(240, 240, 240, 0.6);
+
+    border-left: 4px solid rgba(227, 127, 104, 0.5);
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.service:hover {
+    background: rgba(230, 230, 230, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 #add-to-cart-btn {
@@ -233,6 +251,28 @@ main {
     transform: translateY(-1px);
     background: rgb(227, 127, 104);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes add-to-cart-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.95);
+    }
+
+    60% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#add-to-cart-btn.animate {
+    animation: add-to-cart-pop 0.35s ease;
 }
 
 .btn-disabled {
@@ -291,11 +331,18 @@ main {
 
 @media (max-width: 900px) {
     main {
+        flex-direction: column;
         grid-template-columns: 1fr;
+        align-items: center;
     }
 
     .item-buy {
+        order: -1;
         position: static;
-        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .item-info {
+        order: 0;
     }
 }

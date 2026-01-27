@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    if (!localStorage.getItem("cart")) {
+        localStorage.setItem("cart", JSON.stringify([]));
+    }
+
+    if (!localStorage.getItem("user")) {
+        localStorage.setItem("user", JSON.stringify(null));
+    }
+
+    let cachedItems = null;
+
     //=====Function=====
     //load layout
     async function loadLayout(id, file) {
@@ -15,6 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const savedLang = localStorage.getItem("lang") || "en";
         await setLanguage(savedLang);
+    }
+
+    async function getItems() {
+        if (cachedItems) return cachedItems;
+
+        const res = await fetch("/src/data/items.json");
+        cachedItems = await res.json();
+        return cachedItems;
     }
 
     //navbar and responscive
@@ -102,24 +120,234 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //language switch
     async function setLanguage(lang) {
-        const res = await fetch(`src/data/${lang}.json`);
-        const dict = await res.json();
+        try {
+            const res = await fetch(`/src/data/${lang}.json`);
+            if (!res.ok) throw new Error("Language file not found");
 
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-            const key = el.dataset.i18n;
-            if (dict[key]) {
-                el.textContent = dict[key];
+            const dict = await res.json();
+
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.dataset.i18n;
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            localStorage.setItem("lang", lang);
+        } catch (err) {
+            console.error("setLanguage error:", err);
+        }
+    }
+
+    //add to cart
+    function addToCart(itemId, qty = 1) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existing = cart.find(i => i.id === itemId);
+
+        if (existing) {
+            existing.quantity += qty;
+        } else {
+            cart.push({ id: itemId, quantity: qty });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+        renderCartDropdown();
+
+        const cartBtn = document.querySelector(".cart-btn");
+        const cartCount = document.querySelector(".cart-count");
+        if (cartBtn) {
+            cartBtn.classList.remove("animate");
+            void cartBtn.offsetWidth;
+            cartBtn.classList.add("animate");
+        }
+
+        if (cartCount) {
+            cartCount.classList.remove("animate");
+            void cartCount.offsetWidth;
+            cartCount.classList.add("animate");
+        }
+    }
+
+    function updateCartCount() {
+        const countEl = document.querySelector(".cart-count");
+        if (!countEl) return;
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        countEl.textContent = totalQty;
+        countEl.style.display = "block";
+    }
+
+    async function renderCartDropdown() {
+        const dropdown = document.querySelector(".cart-dropdown");
+        if (!dropdown) return;
+
+        const emptyEl = dropdown.querySelector(".cart-empyt");
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const itemsContainer = dropdown.querySelector(".cart-items");
+        if (!itemsContainer) return;
+
+        itemsContainer.querySelectorAll(".cart-item").forEach(el => el.remove());
+
+        if (cart.length === 0) {
+            itemsContainer.querySelectorAll(".cart-item").forEach(el => el.remove());
+
+            if (emptyEl) {
+                emptyEl.style.display = "flex";
             }
+
+            dropdown.querySelector(".cart-subtotal")?.remove();
+            updateCartCount();
+            return;
+        }
+
+        if (emptyEl) {
+            emptyEl.style.display = "none";
+        }
+
+        const items = await getItems();
+        let subtotal = 0;
+
+        cart.forEach(ci => {
+            const product = items.find(p => p.id === ci.id);
+            if (!product) return;
+
+            subtotal += product.price * ci.quantity;
+
+            const div = document.createElement("div");
+            div.className = "cart-item";
+
+            div.innerHTML = `
+                <img src="${product.image[0]}" alt="">
+                <div class="cart-info">
+                    <p>${product.brand} ${product.name}</p>
+
+                    <div class="cart-qty">
+                        <button
+                            class="qty-btn minus"
+                            data-id="${ci.id}"
+                            ${ci.quantity <= 1 ? "disabled" : ""}
+                        >−</button>
+
+                        <span class="qty-num">${ci.quantity}</span>
+
+                        <button
+                            class="qty-btn plus"
+                            data-id="${ci.id}"
+                            ${ci.quantity >= 9 ? "disabled" : ""}
+                        >+</button>
+                    </div>
+
+                    <span class="cart-price">$${product.price}</span>
+                </div>
+                <button class="cart-remove" data-id="${ci.id}">✕</button>
+            `;
+
+            itemsContainer.appendChild(div);
         });
 
-        localStorage.setItem("lang", lang);
+        dropdown.querySelector(".cart-subtotal")?.remove();
+
+        const subtotalEl = document.createElement("div");
+        subtotalEl.className = "cart-subtotal";
+        subtotalEl.innerHTML = `
+            <span>Subtotal</span>
+            <strong>$${subtotal.toLocaleString()}</strong>
+            `;
+
+        dropdown.insertBefore(
+            subtotalEl,
+            dropdown.querySelector(".go-to-cart-btn")
+        );
+
+        updateCartCount();
+        bindCartRemove();
+        bindCartQtyButtons();
+    }
+
+    function removeFromCart(itemId) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart = cart.filter(item => item.id !== itemId);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+        renderCartDropdown();
+    }
+
+    function changeCartQty(itemId, delta) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const item = cart.find(i => i.id === itemId);
+        if (!item) return;
+
+        const nextQty = item.quantity + delta;
+
+        if (nextQty < 1 || nextQty > 9) return;
+
+        item.quantity = nextQty;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        updateCartCount();
+        renderCartDropdown();
+    }
+
+    function bindCartQtyButtons() {
+        const dropdown = document.querySelector(".cart-dropdown");
+        if (!dropdown) return;
+
+        dropdown.addEventListener("click", e => {
+            const btn = e.target.closest(".qty-btn");
+            if (!btn) return;
+
+            const itemId = Number(btn.dataset.id);
+            const delta = btn.classList.contains("plus") ? 1 : -1;
+
+            changeCartQty(itemId, delta);
+        });
+    }
+
+    function bindCartRemove() {
+        const dropdown = document.querySelector(".cart-dropdown");
+        if (!dropdown) return;
+
+        dropdown.addEventListener("click", e => {
+            const btn = e.target.closest(".cart-remove");
+            if (!btn) return;
+
+            const itemId = Number(btn.dataset.id);
+            const itemEl = btn.closest(".cart-item");
+
+            if (itemEl) {
+                itemEl.classList.add("removing");
+
+                setTimeout(() => {
+                    removeFromCart(itemId);
+                }, 250);
+            }
+        });
     }
 
     //=====run function=====
-    initLayout();
+    (async function () {
+        await initLayout();
 
+        updateCartCount();
+        renderCartDropdown();
+    })();
+
+    //=====Global Functions=====
     window.showLoader = showLoader;
     window.hideLoader = hideLoader;
     window.withMinLoading = withMinLoading;
+    window.addToCart = addToCart;
+    window.updateCartCount = updateCartCount;
+    window.renderCartDropdown = renderCartDropdown;
 
 })
