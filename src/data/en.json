@@ -3,7 +3,9 @@
   "nav.shop": "Shop",
   "nav.about": "About",
   "nav.contact": "Contact Us",
-  "login": "LOGIN",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
   "cart": "CART",
   "goToCart": "Go to Cart →"
 }
