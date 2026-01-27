@@ -33,7 +33,41 @@
         </section>
 
         <section class="carousel">
-            carousel
+            <div class="carousel-top">
+                <span>Quick View Products</span>
+                <div class="carousel-random">
+                    <span>Refresh</span>
+                    <button class="carousel-random-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                            <path
+                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-contanier">
+                <div class="item-carousel before">
+                    <img class="item-img-carousel-main before" src="/src/images/items/sample.webp" loading="lazy" />
+                </div>
+                <img id="prev-btn" class="img-carousel-btn" src="/src/images/symbols/prev.png">
+                <div class="item-carousel now">
+                    <div class="img-contanier now">
+                        <img class="item-img-carousel-main now" src="/src/images/items/sample.webp" loading="lazy" />
+                    </div>
+                    <div class="info-contanier">
+                        <span class="carousel-brand">brand</span>
+                        <span class="carousel-name">name</span>
+                        <a href="/shop/item.html?id=?" class="buy-link">Go to buy!</a>
+                    </div>
+                </div>
+                <img id="next-btn" class="img-carousel-btn" src="/src/images/symbols/next.png">
+                <div class="item-carousel after">
+                    <img class="item-img-carousel-main after" src="/src/images/items/sample.webp" loading="lazy" />
+                </div>
+            </div>
         </section>
 
         <section class="random-product">
@@ -54,5 +88,6 @@
 </body>
 
 <script src="/js/layout.js"></script>
+<script src="/js/index.js"></script>
 
 </html>
