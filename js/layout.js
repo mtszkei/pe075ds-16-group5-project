@@ -266,8 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         updateCartCount();
-        bindCartRemove();
-        bindCartQtyButtons();
     }
 
     function removeFromCart(itemId) {
@@ -337,9 +335,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //=====run function=====
     (async function () {
         await initLayout();
-
         updateCartCount();
         renderCartDropdown();
+        bindCartQtyButtons();
+        bindCartRemove();
     })();
 
     //=====Global Functions=====
@@ -349,5 +348,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addToCart = addToCart;
     window.updateCartCount = updateCartCount;
     window.renderCartDropdown = renderCartDropdown;
-
 })

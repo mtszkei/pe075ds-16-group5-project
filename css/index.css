@@ -174,7 +174,7 @@
 }
 
 .carousel-random-btn.spin svg {
-    transform: rotate(360deg)!important;
+    transform: rotate(720deg)!important;
 }
 
 /* carousel image */

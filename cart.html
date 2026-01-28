@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/cart.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <h1 class="cartpage-title">Shopping Cart</h1>
+        <section class="cartpage">
+            <div class="cart-option">
+                <div class="receive-order">
+                    <h2>How would you like to receive your order?</h2>
+                    <span>Click the button below to check the availability of the shipping area.</span>
+                    <div class="receive-method">
+                        <input type="radio" id="delivery" name="method" value="delivery">
+                        <label for="delivery" class="method-card">
+                            DELIVERY
+                        </label>
+
+                        <input type="radio" id="pickup" name="method" value="pickup">
+                        <label for="pickup" class="method-card">
+                            PICK-UP
+                        </label>
+                    </div>
+                </div>
+                <div class="cartpage-items">
+                    <div class="cartpage-item">
+                        <div class="cartpage-item-img-contanier">
+                            <img class="cartpage-item-img" src="/src/images/items/sample.webp" loading="lazy" />
+                        </div>
+                        <div class="cartpage-item-info">
+                            <div class="cartpage-item-name">
+                                <span class="brand">ABCD</span>
+                                <span class="name">name</span>
+                            </div>
+                            <div class="cartpage-qty">
+                                <button class="cartpage-qty-btn">−</button>
+                                <span class="cartpage-qty-num">2</span>
+                                <button class="cartpage-qty-btn">+</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </div>
+                            <div class="assembly-option">
+                                <input type="checkbox" id="assembly" name="assembly-service" value="assembly"
+                                    data-price="200">
+                                <label for="assembly" class="assembly-label">
+                                    Assembly service (+ $200/each)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="cartpage-item-price">
+                            <div class="cartpage-price">
+                                $1000
+                            </div>
+                            <div class="cartpage-subtotal">
+                                $2000
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartpage-item">
+                        <div class="cartpage-item-img-contanier">
+                            <img class="cartpage-item-img" src="/src/images/items/sample.webp" loading="lazy" />
+                        </div>
+                        <div class="cartpage-item-info">
+                            <div class="cartpage-item-name">
+                                <span class="brand">ABCD</span>
+                                <span class="name">name</span>
+                            </div>
+                            <div class="cartpage-qty">
+                                <button class="cartpage-qty-btn">−</button>
+                                <span class="cartpage-qty-num">2</span>
+                                <button class="cartpage-qty-btn">+</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </div>
+                            <div class="assembly-option">
+                                <input type="checkbox" id="assembly" name="assembly-service" value="assembly"
+                                    data-price="200">
+                                <label for="assembly" class="assembly-label">
+                                    Assembly service (+ $200/each)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="cartpage-item-price">
+                            <div class="cartpage-price">
+                                $1000
+                            </div>
+                            <div class="cartpage-subtotal">
+                                $2000
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartpage-item">
+                        <div class="cartpage-item-img-contanier">
+                            <img class="cartpage-item-img" src="/src/images/items/sample.webp" loading="lazy" />
+                        </div>
+                        <div class="cartpage-item-info">
+                            <div class="cartpage-item-name">
+                                <span class="brand">ABCD</span>
+                                <span class="name">name</span>
+                            </div>
+                            <div class="cartpage-qty">
+                                <button class="cartpage-qty-btn">−</button>
+                                <span class="cartpage-qty-num">2</span>
+                                <button class="cartpage-qty-btn">+</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </div>
+                            <div class="assembly-option">
+                                <input type="checkbox" id="assembly" name="assembly-service" value="assembly"
+                                    data-price="200">
+                                <label for="assembly" class="assembly-label">
+                                    Assembly service (+ $200/each)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="cartpage-item-price">
+                            <div class="cartpage-price">
+                                $1000
+                            </div>
+                            <div class="cartpage-subtotal">
+                                $2000
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartpage-item">
+                        <div class="cartpage-item-img-contanier">
+                            <img class="cartpage-item-img" src="/src/images/items/sample.webp" loading="lazy" />
+                        </div>
+                        <div class="cartpage-item-info">
+                            <div class="cartpage-item-name">
+                                <span class="brand">ABCD</span>
+                                <span class="name">name</span>
+                            </div>
+                            <div class="cartpage-qty">
+                                <button class="cartpage-qty-btn">−</button>
+                                <span class="cartpage-qty-num">2</span>
+                                <button class="cartpage-qty-btn">+</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                            </div>
+                            <div class="assembly-option">
+                                <input type="checkbox" id="assembly" name="assembly-service" value="assembly"
+                                    data-price="200">
+                                <label for="assembly" class="assembly-label">
+                                    Assembly service (+ $200/each)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="cartpage-item-price">
+                            <div class="cartpage-price">
+                                $1000
+                            </div>
+                            <div class="cartpage-subtotal">
+                                $2000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="qty-count">
+                    <span class="summary-subtitle">Total products</span>
+                    <span class="total-qty">2</span>
+                </div>
+                <div class="price-count">
+                    <span class="summary-subtitle">Products</span>
+                    <span class="total-products-price">$2000</span>
+                </div>
+                <div class="service-fee">
+                    <span class="summary-subtitle">Total delivery service fee</span>
+                    <span class="total-service-fee">Please select shipping method</span>
+                </div>
+                <div class="order-total">
+                    <span class="summary-subtitle">Total</span>
+                    <span>$2000</span>
+                </div>
+                <div class="promo-code">
+                    <span>Got a promotional code?</span>
+                    <label for="fname">Promotional Code:</label>
+                    <input type="text" id="fname" name="fname">
+                    <button>Apply</button>
+                </div>
+                <button>
+                    Check Out
+                </button>
+            </div>
+
+
+        </section>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+<script src="/js/layout.js"></script>
+<script src="/js/cart.js"></script>
+
+</html>

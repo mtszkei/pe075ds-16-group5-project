@@ -7,5 +7,7 @@
   "logout": "Logout",
   "register": "Register",
   "cart": "CART",
-  "goToCart": "Go to Cart →"
+  "goToCart": "Go to Cart →",
+  "filter.sofa":"Sofa",
+  "filter.category": "Category"
 }
