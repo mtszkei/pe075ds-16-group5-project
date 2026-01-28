@@ -16,5 +16,6 @@
   "enterEmail": "輸入電郵地址...",
   "password": "密碼",
   "enterPassword": "輸入密碼...",
-  "loginError": "登入失敗：無效的電郵或密碼"
+  "loginError": "登入失敗：無效的電郵或密碼",
+  "registerError": "註冊失敗：電郵已被使用"
 }
