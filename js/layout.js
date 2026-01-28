@@ -133,6 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (dict[key]) {
+                    el.placeholder = dict[key];
+                }
+            });
+
             localStorage.setItem("lang", lang);
         } catch (err) {
             console.error("setLanguage error:", err);
