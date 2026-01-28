@@ -31,15 +31,18 @@
 
             <!-- Login -->
             <div class="action-item login">
-                <a href="/login_register.html" class="action-icon">
+                <a href="/member.html" class="action-icon">
                     <img src="/src/images/symbols/person-circle.svg" alt="login">
-                    <span class="action-label">
+                    <span name="memberLoginSpan" class="action-label">
                         <span data-i18n="login">LOGIN</span>/
                         <span data-i18n="register">REGISTER</span>
                     </span>
+                    <span name="memberLoginSpan" class="action-label" style="display:none">
+                        <span data-i18n="logout">LOGOUT</span>
+                    </span>
                 </a>
-
             </div>
+            
             <!-- Cart -->
             <div class="action-item cart">
                 <button class="cart-btn">
