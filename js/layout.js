@@ -97,10 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function setLoginLogoutDisplay() {
         const user = JSON.parse(localStorage.getItem("user"));
         const isLoggedIn = user && user["email"] !== null;
-        const memberSpan = document.querySelectorAll('span[name="memberLoginSpan"]');
+        const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
 
-        memberSpan[0].style.display = isLoggedIn ? "none" : "inline";
-        memberSpan[1].style.display = isLoggedIn ? "inline" : "none";
+        memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
+        memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
     }
 
     //loading display
