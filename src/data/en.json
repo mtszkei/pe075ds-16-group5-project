@@ -9,5 +9,12 @@
   "cart": "CART",
   "goToCart": "Go to Cart →",
   "filter.sofa":"Sofa",
-  "filter.category": "Category"
+  "filter.category": "Category",
+  "memberName": "Name",
+  "enterMemberName": "Enter name...",
+  "email": "Email Address",
+  "enterEmail": "Enter email address...",
+  "password": "Password",
+  "enterPassword": "Enter password...",
+  "loginError": "Login failed: Invalid email or password"
 }
