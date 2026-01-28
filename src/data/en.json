@@ -16,5 +16,6 @@
   "enterEmail": "Enter email address...",
   "password": "Password",
   "enterPassword": "Enter password...",
-  "loginError": "Login failed: Invalid email or password"
+  "loginError": "Login failed: Invalid email or password",
+  "registerError": "Registration failed: Email already in use"
 }
