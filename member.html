@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Store</title>
+
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="./css/member.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="mem-container">
+            <div class="mem-form-container-wrapper">
+                <!-- 登入區塊 -->
+                <div class="mem-form-section">
+                    <h2 class="mem-subtitle" data-i18n="login">Login</h2>
+                    <form id="loginForm">
+                        <div class="mem-form-group">
+                            <label class="mem-label" for="login-email"><span data-i18n="email">電郵地址</span> *</label>
+                            <input type="email" id="login-email" class="mem-input" data-i18n-placeholder="enterEmail" required>
+                        </div>
+                        <div class="mem-form-group">
+                            <label class="mem-label" for="login-password"><span data-i18n="password">密碼</span> *</label>
+                            <input type="password" id="login-password" class="mem-input" data-i18n-placeholder="enterPassword" required>
+                        </div>
+                        <button id="loginBtn" type="submit" class="mem-btn mem-primary-btn" data-i18n="login">登入</button>
+                    </form>
+                    <div id="loginError" class="mem-error-message" style="visibility:hidden" data-i18n="loginError"></div>
+                </div>
+        
+                <div class="mem-form-separator"></div>
+
+                <!-- 註冊區塊 -->
+                <div class="mem-form-section">
+                    <h2 class="mem-subtitle" data-i18n="register">Register</h2>
+                    <form id="registerForm">
+                        <div class="mem-form-group">
+                            <label class="mem-label" for="register-name"><span data-i18n="memberName">姓名</span> *</label>
+                            <input type="text" id="register-name" class="mem-input" data-i18n-placeholder="enterMemberName" required>
+                        </div>
+                        <div class="mem-form-group">
+                            <label class="mem-label" for="register-email"><span data-i18n="email">電郵地址</span> *</label>
+                            <input type="email" id="register-email" class="mem-input" data-i18n-placeholder="enterEmail" required>
+                        </div>
+                        <div class="mem-form-group">
+                            <label class="mem-label" for="register-password"><span data-i18n="password">密碼</span> *</label>
+                            <input type="password" id="register-password" class="mem-input" data-i18n-placeholder="enterPassword" minlength="8" required>
+                        </div>
+                        <button id="regBtn" type="submit" class="mem-btn mem-primary-btn" data-i18n="register">登記</button>
+                    </form>
+                    <div id="registerError" class="mem-error-message" style="visibility:hidden" data-i18n="registerError"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+</body>
+
+<script src="/js/layout.js"></script>
+<script src="./js/member.js"></script>
+
+</html>

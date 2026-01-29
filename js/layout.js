@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cart", JSON.stringify([]));
     }
 
-    if (!localStorage.getItem("user")) {
-        localStorage.setItem("user", JSON.stringify(null));
+    if (!sessionStorage.getItem("user")) {
+        sessionStorage.setItem("user", JSON.stringify(null));
     }
 
     let cachedItems = null;
@@ -96,6 +96,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.classList.add("active");
             });
         });
+        setLoginLogoutDisplay();
+    }
+
+    //set login/logout display
+    function setLoginLogoutDisplay() {
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        const isLoggedIn = user && user["email"] !== null;
+        const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
+        if(memberSpans && memberSpans.length == 2) {
+            memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
+            memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
+        }
     }
 
     //loading display
@@ -136,6 +148,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const key = el.dataset.i18n;
                 if (dict[key]) {
                     el.textContent = dict[key];
+                }
+            });
+
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (dict[key]) {
+                    el.placeholder = dict[key];
                 }
             });
 
