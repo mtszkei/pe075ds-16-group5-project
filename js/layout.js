@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("cart", JSON.stringify([]));
     }
 
-    if (!localStorage.getItem("user")) {
-        localStorage.setItem("user", JSON.stringify(null));
+    if (!sessionStorage.getItem("user")) {
+        sessionStorage.setItem("user", JSON.stringify(null));
     }
 
     let cachedItems = null;
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //set login/logout display
     function setLoginLogoutDisplay() {
-        const user = JSON.parse(localStorage.getItem("user"));
+        const user = JSON.parse(sessionStorage.getItem("user"));
         const isLoggedIn = user && user["email"] !== null;
         const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
         if(memberSpans && memberSpans.length == 2) {
