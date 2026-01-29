@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function setLoginLogoutDisplay() {
         const user = JSON.parse(sessionStorage.getItem("user"));
         const isLoggedIn = user && user["email"] !== null;
-        const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
-        if (memberSpans && memberSpans.length == 2) {
+        const memberSpans = document.querySelectorAll('span[name="memberSpan"]');
+        if(memberSpans && memberSpans.length == 2) {
             memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
             memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
         }
