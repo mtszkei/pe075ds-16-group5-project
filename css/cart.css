@@ -481,6 +481,16 @@ main {
     transform: scale(0.97);
 }
 
+.check-out-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.check-out-btn:disabled:hover {
+    background: #ccc;
+}
+
 /* statement */
 
 .statement-list {
@@ -537,6 +547,36 @@ main {
 .statement-content {
     font-size: 0.85rem;
     color: rgb(77, 77, 77);
+}
+
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.payment-method {
+    width: 56px;
+    height: 44px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    background: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    padding: 5px;
+}
+
+.payment-method img {
+    height: 30px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 

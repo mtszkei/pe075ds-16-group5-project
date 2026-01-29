@@ -143,6 +143,63 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ===== checkout =====
+    const checkoutBtn = document.querySelector(".check-out-btn");
+
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", async () => {
+            const cart = getCartFromStorage();
+            if (!cart || cart.length === 0) return;
+
+            const items = await fetchItems();
+            const cartItems = mergeCartWithItems(cart, items);
+
+            const deliveryFee = getDeliveryFee();
+
+            const assemblyFee = getAssemblyFee(cartItems);
+
+            const discount = getDiscountAmount();
+
+            const productsTotal = cartItems.reduce((sum, i) => sum + i.subtotal, 0);
+            const totalQty = cartItems.reduce((sum, i) => sum + i.quantity, 0);
+
+            const total = productsTotal + deliveryFee + assemblyFee - discount;
+
+            const delivery = document.getElementById("delivery");
+            const pickup = document.getElementById("pickup");
+
+            const shippingMethod =
+                delivery?.checked ? "delivery" :
+                    pickup?.checked ? "pickup" :
+                        "not_selected";
+
+            const checkoutDraft = {
+                at: Date.now(),
+                items: cartItems.map(i => ({
+                    id: i.id,
+                    brand: i.brand,
+                    name: i.name,
+                    price: i.price,
+                    quantity: i.quantity,
+                    subtotal: i.subtotal,
+                    image: i.image?.[0] || ""
+                })),
+                totalQty,
+                productsTotal,
+                deliveryFee,
+                assemblyFee,
+                discount,
+                total,
+                shippingMethod,
+                assemblyItemIds: [...assemblySelections],
+            };
+
+            localStorage.setItem("checkoutDraft", JSON.stringify(checkoutDraft));
+
+            window.location.href = "/checkout.html";
+        });
+    }
+
 
     //=====function=====
     function bindToggle({ button, target, arrowSelector = ".toggle-arrow" }) {
@@ -207,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
             renderCart(cartItems);
             renderOrderSummary(cartItems);
             renderServiceFee();
+            updateCheckoutButtonState();
         } catch (err) {
             console.error(err);
         }
@@ -453,5 +511,20 @@ document.addEventListener("DOMContentLoaded", () => {
             applyBtn.disabled = true;
         }
     }
+
+    //check out btn able
+    function updateCheckoutButtonState() {
+        const checkoutBtn = document.querySelector(".check-out-btn");
+        if (!checkoutBtn) return;
+
+        const delivery = document.getElementById("delivery");
+        const pickup = document.getElementById("pickup");
+
+        const hasSelected =
+            delivery?.checked || pickup?.checked;
+
+        checkoutBtn.disabled = !hasSelected;
+    }
+
 });
 

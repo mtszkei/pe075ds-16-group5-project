@@ -7,27 +7,176 @@
     <title>Furniture Store | </title>
 
     <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/checkout.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
+
     <div id="header"></div>
 
-    <main>
 
+    <main>
+        <section class="checkout">
+            <div class="checkout-left">
+                <h2>Your items</h2>
+                <div class="checkout-items"></div>
+            </div>
+
+            <div class="checkout-right">
+                <h2>Summary</h2>
+
+                <div class="sum-row">
+                    <span>Total products</span>
+                    <span class="sum-qty"></span>
+                </div>
+
+                <div class="sum-row">
+                    <span>Products</span>
+                    <span class="sum-products"></span>
+                </div>
+
+                <div class="sum-row">
+                    <span>Shipping</span>
+                    <span class="sum-shipping"></span>
+                </div>
+
+                <div class="sum-row">
+                    <span>Assembly</span>
+                    <span class="sum-assembly"></span>
+                </div>
+
+                <div class="sum-row">
+                    <span>Discount</span>
+                    <span class="sum-discount"></span>
+                </div>
+
+                <div class="sum-total">
+                    <span>Total</span>
+                    <strong class="sum-total-price"></strong>
+                </div>
+            </div>
+        </section>
+        <h2>Please select a payment method.</h2>
+        <section class="payment-option">
+            <div class="payment-methods">
+                <input type="radio" id="credit-card" name="payment" value="credit-card">
+                <label for="credit-card" class="payment-method">
+                    <img src="/src/images/symbols/payment/visa.svg" alt="visa">
+                    <img src="/src/images/symbols/payment/mastercard.svg" alt="mastercard">
+                </label>
+
+                <input type="radio" id="qr-code" name="payment" value="qr-code">
+                <label for="qr-code" class="payment-method">
+                    <img src="/src/images/symbols/payment/alipayhk.svg" alt="alipayhk">
+                    <img src="/src/images/symbols/payment/wechatpay.svg" alt="wechatpay">
+                    <img src="/src/images/symbols/payment/bocpay.svg" alt="bocpay">
+                </label>
+
+                <input type="radio" id="walk-in" name="payment" value="walk-in">
+                <label for="walk-in" class="payment-method">
+                    <img src="/src/images/symbols/payment/cash.svg" alt="cash">
+                    <img src="/src/images/symbols/payment/octopus.svg" alt="octopus">
+                </label>
+            </div>
+        </section>
+
+        <section class="payment-detail">
+            <div class="credit-card-payment">
+                <div class="card-form">
+                    <h2>Credit card infomation</h2>
+                    <div class="form-group">
+                        <label>Card number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" inputmode="numeric"
+                            autocomplete="cc-number" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card holder</label>
+                        <input type="text" placeholder="JOHN WICK" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="password" placeholder="•••" maxlength="3">
+                        </div>
+                    </div>
+                    <button class="place-order-btn" id="place-card-order" disabled>Place order</button>
+                    <p class="secure-note">
+                        🔒 Your payment is secured with encryption
+                    </p>
+                </div>
+            </div>
+
+            <div class="qr-code-payment">
+                <div class="qr-code" id="qr-code-box"></div>
+                <button class="place-order-btn">Place order</button>
+            </div>
+
+            <div class="walk-in-payment">
+                <h2 class="payment-title">Pick-up date & time</h2>
+
+                <div class="walkin-form">
+                    <div class="form-group">
+                        <label for="pickup-date">Pick-up date</label>
+                        <select id="pickup-day">
+                            <option value="day-1">Tomorrow</option>
+                            <option value="day-2">2nd day</option>
+                            <option value="day-3">3rd day</option>
+                            <option value="day-4">4th day</option>
+                            <option value="day-5">5th day</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-time">Pick-up time</label>
+                        <select id="pickup-time">
+                            <option>11:00</option>
+                            <option>12:00</option>
+                            <option>13:00</option>
+                            <option>14:00</option>
+                            <option>15:00</option>
+                            <option>16:00</option>
+                            <option>17:00</option>
+                            <option>18:00</option>
+                            <option>19:00</option>
+                            <option>20:00</option>
+                        </select>
+                    </div>
+                    <button class="place-order-btn">Place order</button>
+                </div>
+                <p class="walkin-note">
+                    Please arrive at the store within your selected time slot.
+                </p>
+            </div>
+        </section>
+
+        <div class="checkout-modal">
+            <div class="checkout-modal-card">
+                <h3>Order placed ✅</h3>
+                <p>Your cart has been cleared.</p>
+                <button class="close-modal-btn">OK</button>
+            </div>
+        </div>
     </main>
 
     <div id="footer"></div>
+
 </body>
 
 <script src="/js/layout.js"></script>
-<script src="/js/checkyout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+<script src="/js/checkout.js"></script>
 
 </html>

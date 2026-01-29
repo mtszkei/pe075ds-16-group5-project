@@ -266,6 +266,19 @@ main {
     animation: cart-bounce 0.4s ease;
 }
 
+.cart-btn:disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.cart:has(.cart-btn:disabled) .cart-dropdown {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(8px) !important;
+    pointer-events: none;
+}
+
 .cart-count {
     position: absolute;
     top: -2px;

@@ -19,9 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //=====Function=====
     //load layout
     async function loadLayout(id, file) {
+        const container = document.getElementById(id);
+        if (!container) return;
+
         const res = await fetch(file);
         const html = await res.text();
-        document.getElementById(id).innerHTML = html;
+        container.innerHTML = html;
     }
 
     async function initLayout() {
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = JSON.parse(sessionStorage.getItem("user"));
         const isLoggedIn = user && user["email"] !== null;
         const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
-        if(memberSpans && memberSpans.length == 2) {
+        if (memberSpans && memberSpans.length == 2) {
             memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
             memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
         }
