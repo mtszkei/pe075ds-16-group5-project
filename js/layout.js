@@ -305,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.dispatchEvent(new Event("cartUpdated"));
 
         updateCartCount();
-        renderCartDropdown();
     }
 
     function changeCartQty(itemId, delta) {

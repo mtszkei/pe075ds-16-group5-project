@@ -243,7 +243,7 @@ function initQRCodePayment() {
 
     container.innerHTML = "";
 
-    const paymentUrl = "https://example.com/pay?order=demo123";
+    const paymentUrl = "https://upload.wikimedia.org/wikipedia/commons/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg";
 
     new QRCode(container, {
         text: paymentUrl,

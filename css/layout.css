@@ -15,11 +15,6 @@ body {
     min-height: 100vh;
 }
 
-body.menu-open .lang-switch {
-    opacity: 0;
-    pointer-events: none;
-}
-
 body.loading {
     overflow: hidden;
 }
@@ -102,18 +97,15 @@ main {
     color: #222;
 }
 
-.logo img {
+.logo-img {
     height: 40px;
+    width: 144px;
+    /* padding-right: 5px; */
 }
 
-.logo-text {
-    font-size: clamp(0.8rem, 2.8vw, 1.2rem);
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.logo:hover .logo-text {
-    color: rgb(227, 127, 104);
+body.menu-open .logo {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Navbar */
@@ -165,6 +157,7 @@ main {
     align-items: center;
     gap: 6px;
     margin-right: 8px;
+    padding-left: 8px;
 }
 
 .lang-btn {
@@ -552,10 +545,12 @@ main {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 20%;
+    width: 26.5%;
     height: 100vh;
     background: #fff;
-    padding: 40px 20px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -604,7 +599,7 @@ main {
 }
 
 .nav-actions.shift-left {
-    transform: translateX(-25vw);
+    transform: translateX(-30vw);
 }
 
 .menu-overlay {
