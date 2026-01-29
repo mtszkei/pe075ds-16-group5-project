@@ -98,9 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const user = JSON.parse(localStorage.getItem("user"));
         const isLoggedIn = user && user["email"] !== null;
         const memberSpans = document.querySelectorAll('span[name="memberLoginSpan"]');
-
-        memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
-        memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
+        if(memberSpans && memberSpans.length == 2) {
+            memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
+            memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
+        }
     }
 
     //loading display
