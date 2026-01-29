@@ -128,7 +128,7 @@ main {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 1.7vw, 1.1rem);
     padding: 8px 4px;
     transition: color 0.2s ease;
 }
@@ -701,7 +701,7 @@ main {
 }
 
 /* Responsive */
-@media (max-width: 910px) {
+@media (max-width: 930px) {
 
     /* Header */
     .nav-menu {

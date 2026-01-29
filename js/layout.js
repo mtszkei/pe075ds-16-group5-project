@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let cachedItems = null;
 
+    //update cart item info
+    window.addEventListener("cartUpdated", () => {
+        updateCartCount();
+        renderCartDropdown();
+    });
+
     //=====Function=====
     //load layout
     async function loadLayout(id, file) {
@@ -274,6 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cart = cart.filter(item => item.id !== itemId);
 
         localStorage.setItem("cart", JSON.stringify(cart));
+        window.dispatchEvent(new Event("cartUpdated"));
 
         updateCartCount();
         renderCartDropdown();
@@ -291,9 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.quantity = nextQty;
 
         localStorage.setItem("cart", JSON.stringify(cart));
-
-        updateCartCount();
-        renderCartDropdown();
+        window.dispatchEvent(new Event("cartUpdated"));
     }
 
     function bindCartQtyButtons() {

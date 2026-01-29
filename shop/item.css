@@ -326,7 +326,7 @@ main {
     color: #111;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 930px) {
     main {
         flex-direction: column;
         grid-template-columns: 1fr;
