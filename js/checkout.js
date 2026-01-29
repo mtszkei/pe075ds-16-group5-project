@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const draft = getCheckoutDraft();
-    if (!draft) return;
+    if (!draft) {
+        const expired = document.querySelector(".checkout-expired");
+        const btn = document.querySelector(".expired-ok-btn");
+
+        if (expired) {
+            expired.classList.add("show");
+        }
+
+        btn?.addEventListener("click", () => {
+            window.location.href = "/index.html";
+        });
+
+        return;
+    }
 
     disableCartBtnWhenReady();
     renderCheckout(draft);
@@ -13,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bindPlaceCardOrder();
     bindWalkInOrder();
     bindQRPlaceOrder();
+    bindAutoFillCard();
 });
 
 //=====function=====
@@ -273,4 +287,33 @@ function completeOrder() {
     localStorage.removeItem("cart");
     localStorage.removeItem("checkoutDraft");
     modal.classList.add("open");
+}
+
+//auto fill credit card info
+function bindAutoFillCard() {
+    const btn = document.querySelector(".auto-fill");
+    if (!btn) return;
+
+    btn.addEventListener("click", () => {
+        const cardNumber = document.getElementById("card-number");
+        const expiry = document.getElementById("card-expiry");
+        const holder = document.querySelector('input[placeholder="JOHN WICK"]');
+        const cvv = document.querySelector('input[type="password"]');
+        const placeBtn = document.getElementById("place-card-order");
+
+        if (!cardNumber || !expiry || !holder || !cvv) return;
+
+        cardNumber.value = "4242 4242 4242 4242";
+        holder.value = "JOHN WICK";
+        expiry.value = "12/29";
+        cvv.value = "123";
+
+        [cardNumber, holder, expiry, cvv].forEach(el => {
+            el.dispatchEvent(new Event("input", { bubbles: true }));
+        });
+
+        if (placeBtn) {
+            placeBtn.disabled = !isCreditCardFormValid();
+        }
+    });
 }

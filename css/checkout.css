@@ -119,6 +119,8 @@ main {
 .place-order-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    border-color: rgba(0, 0, 0, 0.5);
+    color: black;
 }
 
 .demo-note {
@@ -338,6 +340,21 @@ main {
     text-align: center;
 }
 
+.auto-fill {
+    font-size: 0.8rem;
+    color: #777;
+    border: none;
+    border-bottom: 1px solid #777;
+    width: 24%;
+    background: none;
+    cursor: pointer;
+}
+
+.auto-fill:hover {
+    color: rgb(227, 127, 104);
+    border-bottom: 1px solid rgb(227, 127, 104);
+}
+
 /* walk in payment */
 .walk-in-payment {
     max-width: 500px;
@@ -370,6 +387,81 @@ main {
     min-height: 180px;
 }
 
+/* checkout expired */
+.checkout-expired {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    z-index: 3500;
+}
+
+.checkout-expired.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.checkout-expired-card {
+    width: min(420px, calc(100vw - 40px));
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+
+    transform: translateY(-12px);
+    animation: expiredFadeUp 0.3s ease forwards;
+}
+
+.checkout-expired-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.checkout-expired-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.expired-ok-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px 14px;
+
+    border: 2px solid rgb(227, 127, 104);
+    border-radius: 10px;
+    background: none;
+    color: rgb(227, 127, 104);
+
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.expired-ok-btn:hover {
+    background: rgb(227, 127, 104);
+    color: #fff;
+}
+
+@keyframes expiredFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ===== responsive ===== */
 @media (max-width: 930px) {
 
@@ -377,6 +469,7 @@ main {
         display: flex;
         flex-direction: column;
     }
+
     .payment-method {
         width: 100%;
         height: 80px;
