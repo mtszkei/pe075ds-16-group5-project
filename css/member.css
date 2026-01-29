@@ -79,7 +79,11 @@
     background-color: #C09090;
 }
 
-
+#loginError{
+    color: red;
+    margin-top: 10px;
+    font-size: 18px;
+}
 
 @media (max-width: 768px) {
 
