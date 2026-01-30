@@ -105,12 +105,44 @@ document.addEventListener("DOMContentLoaded", () => {
     //set login/logout display
     function setLoginLogoutDisplay() {
         const user = JSON.parse(sessionStorage.getItem("user"));
-        const isLoggedIn = user && user["email"] !== null;
+        const isLoggedIn = user && user.email;
+
         const memberSpans = document.querySelectorAll('span[name="memberSpan"]');
-        if(memberSpans && memberSpans.length == 2) {
-            memberSpans[0].style.display = isLoggedIn ? "none" : "inline";
-            memberSpans[1].style.display = isLoggedIn ? "inline" : "none";
+        const memberLink = document.querySelector(".action-item.login a");
+
+        if (!memberSpans || memberSpans.length !== 2 || !memberLink) return;
+
+        const loginSpan = memberSpans[0];
+        const userSpan = memberSpans[1];
+
+        if (isLoggedIn) {
+            loginSpan.style.display = "none";
+            userSpan.style.display = "inline";
+
+            userSpan.textContent = user.name;
+
+            memberLink.href = "/index.html";
+            // 或 "/profile.html"、"/account.html"
+        } else {
+            loginSpan.style.display = "inline";
+            userSpan.style.display = "none";
+
+            userSpan.textContent = "";
+
+            // 未登入 → 去 member page
+            memberLink.href = "/member.html";
         }
+    }
+
+    //hide login dropdown
+    function syncLoginDropdownVisibility() {
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        const isLoggedIn = user && user.email;
+
+        const dropdown = document.querySelector(".login-dropdown");
+        if (!dropdown) return;
+
+        dropdown.style.display = isLoggedIn ? "" : "none";
     }
 
     //loading display
@@ -363,6 +395,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    //logout clear session
+    function initLogoutButton() {
+        const logoutBtn = document.querySelector(".logout-btn");
+        if (!logoutBtn) return;
+
+        logoutBtn.addEventListener("click", e => {
+            e.preventDefault();
+
+            sessionStorage.setItem("user", JSON.stringify(null));
+
+            if (typeof setLoginLogoutDisplay === "function") {
+                setLoginLogoutDisplay();
+            }
+
+            window.location.href = "/index.html";
+        });
+    }
+
     //clear local storage checkoutDraf
     function clearCheckoutDraft() {
         localStorage.removeItem("checkoutDraft");
@@ -375,6 +425,8 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCartDropdown();
         bindCartQtyButtons();
         bindCartRemove();
+        initLogoutButton();
+        syncLoginDropdownVisibility();
     })();
 
     //=====Global Functions=====

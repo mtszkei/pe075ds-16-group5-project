@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Member</title>
-=======
     <title data-i18n="member">Member</title>
->>>>>>> b02cefd814b1972be6e68ac9aa33b5360eda3348
 
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="./css/member.css">
@@ -25,23 +21,7 @@
     <div id="header"></div>
 
     <main>
-        <div class="mem-descMessage mem-descMsgFont">
-            <h1 id="successLoginDesc" style="display:none;">
-                <span data-i18n="welcomeBack">Welcome back, </span>
-                <span id="memberNameDisplay"></span>.<br>
-                <span data-i18n="redirectPageMessage"></span>
-                "<span data-i18n="nav.shop" style="text-transform: lowercase;"></span>"
-            </h1>
-            <h1 id="successRegisterDesc" style="display:none;">
-                <span id="newMemberNameDisplay"></span>
-                <span data-i18n="welcomeNewMember"></span>
-                <span data-i18n="autoLoginMessage"></span><br>
-                <span data-i18n="redirectPageMessage"></span>
-                "<span data-i18n="nav.shop"></span>"
-            </h1>
-            <h1 id="successLogoutDesc" data-i18n="logoutMessage" style="display:none;">
-            </h1>
-        </div>
+
         <div class="mem-container">
             <div class="mem-form-container-wrapper">
                 <!-- 登入區塊 -->
@@ -50,17 +30,22 @@
                     <form id="loginForm">
                         <div class="mem-form-group">
                             <label class="mem-label" for="login-email"><span data-i18n="email">電郵地址</span> *</label>
-                            <input type="email" id="login-email" class="mem-input" data-i18n-placeholder="enterEmail" required>
+                            <input type="email" id="login-email" class="mem-input" data-i18n-placeholder="enterEmail"
+                                required>
                         </div>
                         <div class="mem-form-group">
                             <label class="mem-label" for="login-password"><span data-i18n="password">密碼</span> *</label>
-                            <input type="password" id="login-password" class="mem-input" data-i18n-placeholder="enterPassword" required>
+                            <input type="password" id="login-password" class="mem-input"
+                                data-i18n-placeholder="enterPassword" required>
                         </div>
-                        <button id="loginBtn" type="submit" class="mem-btn mem-primary-btn" data-i18n="login">登入</button>
+                        <button id="loginBtn" type="submit" class="mem-btn mem-primary-btn"
+                            data-i18n="login">登入</button>
                     </form>
-                    <div id="loginError" class="mem-error-message" style="visibility:hidden" data-i18n="loginError"></div>
+                    <div id="loginError" class="mem-error-message" style="visibility:hidden" data-i18n="loginError">
+                    </div>
+                    <button class="auto-fill login-fill">Autofill(test only)</button>
                 </div>
-        
+
                 <div class="mem-form-separator"></div>
 
                 <!-- 註冊區塊 -->
@@ -68,23 +53,46 @@
                     <h2 class="mem-subtitle" data-i18n="register">Register</h2>
                     <form id="registerForm">
                         <div class="mem-form-group">
-                            <label class="mem-label" for="register-name"><span data-i18n="memberName">姓名</span> *</label>
-                            <input type="text" id="register-name" class="mem-input" data-i18n-placeholder="enterMemberName" required>
+                            <label class="mem-label" for="register-name"><span data-i18n="memberName">姓名</span>
+                                *</label>
+                            <input type="text" id="register-name" class="mem-input"
+                                data-i18n-placeholder="enterMemberName" required>
                         </div>
                         <div class="mem-form-group">
                             <label class="mem-label" for="register-email"><span data-i18n="email">電郵地址</span> *</label>
-                            <input type="email" id="register-email" class="mem-input" data-i18n-placeholder="enterEmail" required>
+                            <input type="email" id="register-email" class="mem-input" data-i18n-placeholder="enterEmail"
+                                required>
                         </div>
                         <div class="mem-form-group">
-                            <label class="mem-label" for="register-password"><span data-i18n="password">密碼</span> *</label>
-                            <input type="password" id="register-password" class="mem-input" data-i18n-placeholder="enterPassword" minlength="8" required>
+                            <label class="mem-label" for="register-password"><span data-i18n="password">密碼</span>
+                                *</label>
+                            <input type="password" id="register-password" class="mem-input"
+                                data-i18n-placeholder="enterPassword" minlength="8" required>
                         </div>
-                        <button id="regBtn" type="submit" class="mem-btn mem-primary-btn" data-i18n="register">登記</button>
+                        <button id="regBtn" type="submit" class="mem-btn mem-primary-btn"
+                            data-i18n="register">登記</button>
                     </form>
-                    <div id="registerError" class="mem-error-message" style="visibility:hidden" data-i18n="registerError"></div>
+                    <div id="registerError" class="mem-error-message" style="visibility:hidden"
+                        data-i18n="registerError"></div>
+                    <button class="auto-fill reg-fill">Autofill(test only)</button>
                 </div>
             </div>
         </div>
+
+        <!-- Register Success Modal -->
+        <div id="registerSuccessModal" class="mem-modal" style="display:none;">
+            <div class="mem-modal-overlay"></div>
+
+            <div class="mem-modal-content">
+                <h1 id="successRegisterDesc">
+                    <span id="newMemberNameDisplay"></span>
+                    <span data-i18n="welcomeNewMember">Welcome! You are now logged in.</span><br>
+                    <span data-i18n="redirectPageMessage">You will be redirected to</span>
+                    "<span data-i18n="nav.shop">Shop</span>"
+                </h1>
+            </div>
+        </div>
+
     </main>
 
     <div id="footer"></div>

@@ -306,6 +306,54 @@ body.menu-open .logo {
     animation: count-pop 0.35s ease;
 }
 
+/* Login Dropdown */
+.action-item.login {
+    position: relative;
+}
+
+.login-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 160px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    display: none;
+    z-index: 1000;
+}
+
+.login-dropdown a,
+.login-dropdown button {
+    display: block;
+    padding: 10px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout-btn {
+    width: 100%;
+}
+
+.login-dropdown a:hover,
+.login-dropdown button:hover {
+    background: rgba(227, 126, 104, 0.2);
+}
+
+.action-item.login:hover .login-dropdown {
+    display: block;
+}
+
+.action-item.login span[name="memberSpan"]:first-child:not([style*="display: none"])~.login-dropdown {
+    display: none;
+}
+
 /* Cart Dropdown */
 .cart-dropdown {
     position: absolute;

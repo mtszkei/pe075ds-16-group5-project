@@ -284,6 +284,24 @@ function completeOrder() {
     const modal = document.querySelector(".checkout-modal");
     if (!modal) return;
 
+    const draft = JSON.parse(localStorage.getItem("checkoutDraft"));
+
+    fetch("https://script.google.com/macros/s/AKfycbyJIuV2Vm2L0z1szoXGEGpwXePA-ZvQJNuITKB4UwyBsjcmPQO_xUXnQAHe1zylwy7E/exec", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            orderTime: new Date().toISOString(),
+            payment: draft.paymentMethod || "unknown",
+            total: draft.total,
+            totalQty: draft.totalQty,
+            items: draft.items
+        })
+    }).catch(err => {
+        console.error("Save to Google failed", err);
+    });
+
     localStorage.removeItem("cart");
     localStorage.removeItem("checkoutDraft");
     modal.classList.add("open");
