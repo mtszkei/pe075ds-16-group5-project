@@ -4,64 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title data-i18n="nav.about">About Us</title>
 
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/aboutus.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Noto+Sans+TC:wght@100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/aboutus.css">
         
 </head>
 
 <body>
     <div id="header"></div>
 
-    <main>
-        
-    <!-- Introduction -->
-      <div class="hm-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5">
-                <img class="aboutUsImg" src="./src/images/aboutus/aboutus3.jpg">
-                <img class="aboutUsImg" src="./src/images/aboutus/aboutus2.jpg">
-                <img class="aboutUsImg" src="./src/images/aboutus/aboutus1.jpg">
-            </div>
-            <div class="offset-md-1 col-md-6">
-              <div class="hm-about-inner">
-                <p class="hm-highlight hm-text-primary text-uppercase mb-0">Information</p>
-                <h3>Our Story</h3>
-                      <p>We are a brand dedicated to furniture design and sales, committed to creating comfortable, functional, and aesthetically pleasing home environments for our customers. Starting from a small studio, we have adhered to the philosophy of "Quality First, Design Above All," gradually growing into a trusted furniture supplier.</p>
-                <h3>Our Mission</h3>
-                <p>We believe that furniture is not only a necessity of life but also an essential element in expressing personal style and enhancing quality of living. Our mission is to:</p>
-                <ul>
-                 <li>Provide high-quality, durable furniture products.</li>
-                 <li>Combine aesthetics and functionality to meet diverse spatial needs.</li>
-                 <li>Offer fair prices so more people can enjoy beautiful home living</li>
-                </ul>
-                <h3>Our Commitment</h3>
-                <ul>
-                 <li>Quality Assurance: Carefully selected materials and fine craftsmanship ensure durability and safety in every product.</li>
-                 <li>Diverse Designs: From modern minimalism to classic styles, we provide a wide range of options to suit different tastes.</li>
-                 <li>Customer First: We value every customer’s feedback and provide attentive after-sales service.</li>
-                </ul>
-                  <h3>Our Vision</h3>
-                  <p>We aspire to become one of the most influential brands in the furniture industry, helping every household find the right furniture to create their ideal living space.</p>
-                  <hr style="border: 1px dashed" ><p>Let us accompany you in building a warm and comfortable home.</p>
-                </div>
-            </div>
+    <main class="about-page">
+      <div class="about-container">
+
+        <section class="about-section about-row">
+          <div class="about-image">
+            <img src="./src/images/aboutus/aboutus3.jpg" 
+                alt="Modern minimalist cabinet" />
           </div>
+          <div class="about-text">
+            <h2 data-i18n="about.story.title">Our Story</h2>
+            <p data-i18n="about.story.content">
+              We are a brand dedicated to furniture design and sales, committed to creating comfortable, functional, and aesthetically pleasing home environments for our customers. Starting from a small studio, we have adhered to the philosophy of "Quality First, Design Above All," gradually growing into a trusted furniture supplier.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-section about-row">
+          <div class="about-text">
+            <h2 data-i18n="about.mission.title">Our Mission</h2>
+            <p data-i18n="about.mission.intro">
+              We believe that furniture is not only a necessity of life but also an essential element in expressing personal style and enhancing quality of living. Our mission is to:
+            </p>
+            <ul>
+              <li data-i18n="about.mission.item1">Provide high-quality, durable furniture products.</li>
+              <li data-i18n="about.mission.item2">Combine aesthetics and functionality to meet diverse spatial needs.</li>
+              <li data-i18n="about.mission.item3">Offer fair prices so more people can enjoy beautiful home living.</li>
+            </ul>
+          </div>
+          <div class="about-image">
+            <img src="./src/images/aboutus/aboutus2.jpg" 
+                alt="Cozy storage furniture with pet" />
+          </div>
+        </section>
+
+        <section class="about-section about-row">
+          <div class="about-image">
+            <img src="./src/images/aboutus/aboutus1.jpg" 
+                alt="Functional sofa and living setup" />
+          </div>
+          <div class="about-text">
+            <h2 data-i18n="about.commitment.title">Our Commitment</h2>
+            <ul>
+              <li>
+                <strong data-i18n="about.commitment.quality_label">Quality Assurance:</strong>
+                <span data-i18n="about.commitment.quality_desc">Carefully selected materials and fine craftsmanship ensure durability and safety in every product.</span>
+              </li>
+              <li>
+                <strong data-i18n="about.commitment.design_label">Diverse Designs:</strong>
+                <span data-i18n="about.commitment.design_desc">From modern minimalism to classic styles, we provide a wide range of options to suit different tastes.</span>
+              </li>
+              <li>
+                <strong data-i18n="about.commitment.customer_label">Customer First:</strong>
+                <span data-i18n="about.commitment.customer_desc">We value every customer’s feedback and provide attentive after-sales service.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="about-section about-text-only">
+          <h2 data-i18n="about.vision.title">Our Vision</h2>
+          <p data-i18n="about.vision.content">
+            We aspire to become one of the most influential brands in the furniture industry, helping every household find the right furniture to create their ideal living space.
+          </p>
+        </section>
+
+        <div class="about-closing">
+          <p data-i18n="about.closing">
+            Let us accompany you in building a warm and comfortable home.
+          </p>
+          <a href="./shop.html" class="about-btn-orange" data-i18n="about.shop_now">立即選購</a>
         </div>
+
       </div>
     </main>
 
     <div id="footer"></div>
 </body>
 
-<script src="/js/layout.js"></script>
+<script src="./js/layout.js"></script>
 
 </html>

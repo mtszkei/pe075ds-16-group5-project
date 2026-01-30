@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Member</title>
+=======
+    <title data-i18n="member">Member</title>
+>>>>>>> b02cefd814b1972be6e68ac9aa33b5360eda3348
 
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="./css/member.css">
@@ -21,6 +25,23 @@
     <div id="header"></div>
 
     <main>
+        <div class="mem-descMessage mem-descMsgFont">
+            <h1 id="successLoginDesc" style="display:none;">
+                <span data-i18n="welcomeBack">Welcome back, </span>
+                <span id="memberNameDisplay"></span>.<br>
+                <span data-i18n="redirectPageMessage"></span>
+                "<span data-i18n="nav.shop" style="text-transform: lowercase;"></span>"
+            </h1>
+            <h1 id="successRegisterDesc" style="display:none;">
+                <span id="newMemberNameDisplay"></span>
+                <span data-i18n="welcomeNewMember"></span>
+                <span data-i18n="autoLoginMessage"></span><br>
+                <span data-i18n="redirectPageMessage"></span>
+                "<span data-i18n="nav.shop"></span>"
+            </h1>
+            <h1 id="successLogoutDesc" data-i18n="logoutMessage" style="display:none;">
+            </h1>
+        </div>
         <div class="mem-container">
             <div class="mem-form-container-wrapper">
                 <!-- 登入區塊 -->
