@@ -29,8 +29,8 @@
                     <h2 class="mem-subtitle" data-i18n="login">Login</h2>
                     <form id="loginForm">
                         <div class="mem-form-group">
-                            <label class="mem-label" for="login-email"><span data-i18n="email">電郵地址</span> *</label>
-                            <input type="email" id="login-email" class="mem-input" data-i18n-placeholder="enterEmail"
+                            <label class="mem-label" for="login-name"><span data-i18n="memberName">用戶名稱</span> *</label>
+                            <input type="name" id="login-name" class="mem-input" data-i18n-placeholder="enterName"
                                 required>
                         </div>
                         <div class="mem-form-group">
@@ -79,7 +79,6 @@
             </div>
         </div>
 
-        <!-- Register Success Modal -->
         <div id="registerSuccessModal" class="mem-modal" style="display:none;">
             <div class="mem-modal-overlay"></div>
 
@@ -90,6 +89,15 @@
                     <span data-i18n="redirectPageMessage">You will be redirected to</span>
                     "<span data-i18n="nav.shop">Shop</span>"
                 </h1>
+            </div>
+        </div>
+
+        <div class="mem-modal register-name-reminder-modal" style="display:none;">
+            <div class="mem-modal-overlay"></div>
+            <div class="mem-modal-content">
+                <h1>Username already exist.</h1>
+                <h1>Please enter another name.</h1>
+                <a href="/member.html" class="mem-ok-btn">OK</a>
             </div>
         </div>
 

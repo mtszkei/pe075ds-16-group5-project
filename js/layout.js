@@ -418,6 +418,50 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("checkoutDraft");
     }
 
+    //Gurad
+    function guardMemberLinks() {
+        const protectedSelectors = [
+            'a[href="/member/profile.html"]',
+            'a[href="/member/orders.html"]',
+        ];
+
+        const isLoggedIn = () => {
+            const user = JSON.parse(sessionStorage.getItem("user"));
+            return user && user.email;
+        };
+
+        protectedSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(link => {
+                link.addEventListener("click", e => {
+                    if (!isLoggedIn()) {
+                        e.preventDefault();
+                        window.location.href = "/member.html";
+                    }
+                });
+            });
+        });
+    }
+
+    function guardProtectedPages() {
+        const protectedPaths = [
+            "/member/profile.html",
+            "/member/orders.html"
+        ];
+
+        const currentPath = window.location.pathname;
+
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        const isLoggedIn = user && user.email;
+
+        if (!isLoggedIn && protectedPaths.includes(currentPath)) {
+            const modal = document.querySelector(".login-reminder-modal");
+
+            if (modal) {
+                modal.classList.add("active");
+            }
+        }
+    }
+
     //=====run function=====
     (async function () {
         await initLayout();
@@ -427,6 +471,8 @@ document.addEventListener("DOMContentLoaded", () => {
         bindCartRemove();
         initLogoutButton();
         syncLoginDropdownVisibility();
+        guardMemberLinks();
+        guardProtectedPages();
     })();
 
     //=====Global Functions=====

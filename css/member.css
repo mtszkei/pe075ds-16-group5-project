@@ -131,6 +131,28 @@
     border-bottom: 1px solid rgb(227, 127, 104);
 }
 
+.mem-ok-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 10px 36px;
+    border-radius: 50px;
+    background-color: #D4A3A3;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.mem-ok-btn:hover {
+    background-color: #C09090;
+    transform: translateY(-1px);
+}
+
+.mem-ok-btn:active {
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
 
     .mem-form-container-wrapper {

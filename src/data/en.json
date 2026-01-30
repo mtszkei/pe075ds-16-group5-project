@@ -13,7 +13,7 @@
   "memberName": "Name",
   "enterMemberName": "Enter name...",
   "email": "Email Address",
-  "enterEmail": "Enter email address...",
+  "enterName": "Enter name...",
   "password": "Password",
   "enterPassword": "Enter password...",
   "loginError": "Login failed: Invalid email or password",
