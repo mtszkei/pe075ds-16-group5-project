@@ -25,34 +25,34 @@
             <div class="filter-and-items">
                 <div class="filter">
                     <div class="sort">
-                        <span class="filter-title">Sort</span>
-                        <button id="sortByNewest" class="sortBtn">Newest or Oldest</button>
-                        <button id="sortbyPrice" class="sortBtn">Price Higher or Lower</button>
+                        <span class="filter-title" data-i18n="shop.sortTitle">Sort</span>
+                        <button id="sortByNewest" class="sortBtn" data-i18n="shop.sortNewestOldest">Newest or Oldest</button>
+                        <button id="sortbyPrice" class="sortBtn" data-i18n="shop.sortPriceHighLow">Price Higher or Lower</button>
                     </div>
                     <span class="filter-title" data-i18n="filter.category">Category</span>
                     <ul>
                         <li>
                             <label>
                                 <input type="checkbox" name="category" value="Sofa">
-                                Sofa
+                                <span data-i18n="filter.sofa">Sofa</span>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" name="category" value="Bed">
-                                Bed
+                                <span data-i18n="shop.bed">Bed</span>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" name="category" value="Desk">
-                                Desk
+                                <span data-i18n="shop.desk">Desk</span>
                             </label>
                         </li>
                         <li>
                             <label>
                                 <input type="checkbox" name="category" value="Bookcase">
-                                Bookcase
+                                <span data-i18n="shop.bookcase">Bookcase</span>
                             </label>
                         </li>
                     </ul>
@@ -62,19 +62,17 @@
                         <div class="item-image-container">
                             <img src="${item.image_path}" loading="lazy" />
                         </div>
-                        <h3>item name</h3>
+                        <h3 data-i18n-placeholder="shop.itemName">item name</h3>
                         <div class="price-stock">
-                            <p class="price">Price</p>
-                            <p class="stock">Stock</p>
+                            <p class="price" data-i18n-placeholder="price">Price</p>
+                            <p class="stock" data-i18n-placeholder="stock">Stock</p>
                         </div>
-                        <a href="/shop/item.html?id=?" class="buy-link">View detail</a>
-                        <button>Add to cart</button>
+                        <a href="/shop/item.html?id=?" class="buy-link" data-i18n="shop.viewDetail">View detail</a>
+                        <button data-i18n="addToCart">Add to Cart</button>
                     </div>
                 </div>
-
             </div>
         </section>
-
     </main>
 
     <div id="footer"></div>
