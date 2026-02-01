@@ -24,46 +24,46 @@
     <main>
         <section class="checkout">
             <div class="checkout-left">
-                <h2>Your items</h2>
+                <h2 data-i18n="checkout.youritems">Your items</h2>
                 <div class="checkout-items"></div>
             </div>
 
             <div class="checkout-right">
-                <h2>Summary</h2>
+                <h2 data-i18n="checkout.summary">Summary</h2>
 
                 <div class="sum-row">
-                    <span>Total products</span>
+                    <span data-i18n="totalProducts">Total products</span>
                     <span class="sum-qty"></span>
                 </div>
 
                 <div class="sum-row">
-                    <span>Products</span>
+                    <span data-i18n="products">Products</span>
                     <span class="sum-products"></span>
                 </div>
 
                 <div class="sum-row">
-                    <span>Shipping</span>
+                    <span data-i18n="shipping">Shipping</span>
                     <span class="sum-shipping"></span>
                 </div>
 
                 <div class="sum-row">
-                    <span>Assembly</span>
+                    <span data-i18n="checkout.assembly">Assembly</span>
                     <span class="sum-assembly"></span>
                 </div>
 
                 <div class="sum-row">
-                    <span>Discount</span>
+                    <span data-i18n="discount">Discount</span>
                     <span class="sum-discount"></span>
                 </div>
 
                 <div class="sum-total">
-                    <span>Total</span>
+                    <span data-i18n="total">Total</span>
                     <strong class="sum-total-price"></strong>
                 </div>
             </div>
         </section>
 
-        <h2>Please select a payment method.</h2>
+        <h2 data-i18n="checkout.selectPayment">Please select a payment method.</h2>
         <section class="payment-option">
             <div class="payment-methods">
                 <input type="radio" id="credit-card" name="payment" value="credit-card">
@@ -90,32 +90,32 @@
         <section class="payment-detail">
             <div class="credit-card-payment">
                 <div class="card-form">
-                    <h2>Credit card infomation</h2>
+                    <h2 data-i18n="checkout.creditCardInfo">Credit card information</h2>
                     <div class="form-group">
-                        <label>Card number</label>
+                        <label data-i18n="checkout.cardNumber">Card number</label>
                         <input type="text" id="card-number" placeholder="1234 5678 9012 3456" inputmode="numeric"
                             autocomplete="cc-number" required />
                     </div>
 
                     <div class="form-group">
-                        <label>Card holder</label>
+                        <label data-i18n="checkout.cardHolder">Card holder</label>
                         <input type="text" placeholder="JOHN WICK" required>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Expiry</label>
+                            <label data-i18n="checkout.expiry">Expiry</label>
                             <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5" required />
                         </div>
 
                         <div class="form-group">
-                            <label>CVV</label>
+                            <label data-i18n="checkout.cvv">CVV</label>
                             <input type="password" placeholder="•••" maxlength="3">
                         </div>
                     </div>
-                    <button class="place-order-btn" id="place-card-order" disabled>Place order</button>
+                    <button class="place-order-btn" id="place-card-order" disabled data-i18n="checkout.placeOrder">Place order</button>
                     <p class="secure-note">
-                        🔒 Your payment is secured with encryption
+                        🔒 <span data-i18n="checkout.secureNote">Your payment is secured with encryption</span>
                     </p>
                     <button class="auto-fill">Autofill(test only)</button>
                 </div>
@@ -123,26 +123,26 @@
 
             <div class="qr-code-payment">
                 <div class="qr-code" id="qr-code-box"></div>
-                <button class="place-order-btn">Place order</button>
+                <button class="place-order-btn" data-i18n="checkout.placeOrder">Place order</button>
             </div>
 
             <div class="walk-in-payment">
-                <h2 class="payment-title">Pick-up date & time</h2>
+                <h2 class="payment-title" data-i18n="checkout.pickupDateTime">Pick-up date & time</h2>
 
                 <div class="walkin-form">
                     <div class="form-group">
-                        <label for="pickup-date">Pick-up date</label>
+                        <label for="pickup-date" data-i18n="checkout.pickupDate">Pick-up date</label>
                         <select id="pickup-day">
-                            <option value="day-1">Tomorrow</option>
-                            <option value="day-2">2nd day</option>
-                            <option value="day-3">3rd day</option>
-                            <option value="day-4">4th day</option>
-                            <option value="day-5">5th day</option>
+                            <option value="day-1" data-i18n="checkout.tomorrow">Tomorrow</option>
+                            <option value="day-2" data-i18n="checkout.day2">2nd day</option>
+                            <option value="day-3" data-i18n="checkout.day3">3rd day</option>
+                            <option value="day-4" data-i18n="checkout.day4">4th day</option>
+                            <option value="day-5" data-i18n="checkout.day5">5th day</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="pickup-time">Pick-up time</label>
+                        <label for="pickup-time" data-i18n="checkout.pickupTime">Pick-up time</label>
                         <select id="pickup-time">
                             <option>11:00</option>
                             <option>12:00</option>
@@ -156,9 +156,9 @@
                             <option>20:00</option>
                         </select>
                     </div>
-                    <button class="place-order-btn">Place order</button>
+                    <button class="place-order-btn" data-i18n="checkout.placeOrder">Place order</button>
                 </div>
-                <p class="walkin-note">
+                <p class="walkin-note" data-i18n="checkout.arriveNote">
                     Please arrive at the store within your selected time slot.
                 </p>
             </div>
@@ -166,21 +166,22 @@
 
         <div class="checkout-modal">
             <div class="checkout-modal-card">
-                <h3>Order placed ✅</h3>
-                <p>Your cart has been cleared.</p>
-                <button class="close-modal-btn">OK</button>
+                <h3><span data-i18n="checkout.orderPlaced">Order placed</span> ✅</h3>
+                <p data-i18n="checkout.cartCleared">Your cart has been cleared.</p>
+                <button class="close-modal-btn" data-i18n="ok">OK</button>
             </div>
         </div>
 
         <div class="checkout-expired">
             <div class="checkout-expired-card">
-                <h3>Checkout expired</h3>
-                <p>Your checkout session has expired.<br>
-                    Please add items to cart again.</p>
-                <button class="expired-ok-btn">OK</button>
+                <h3 data-i18n="checkout.checkoutExpired">Checkout expired</h3>
+                <p>
+                    <span data-i18n="checkout.sessionExpired">Your checkout session has expired.</span><br>
+                    <span data-i18n="checkout.addItemsAgain">Please add items to cart again.</span>
+                </p>
+                <button class="expired-ok-btn" data-i18n="ok">OK</button>
             </div>
         </div>
-        
     </main>
 
     <div id="footer"></div>
