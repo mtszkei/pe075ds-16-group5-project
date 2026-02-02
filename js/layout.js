@@ -395,22 +395,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    //logout clear session
+    //logout action
     function initLogoutButton() {
         const logoutBtn = document.querySelector(".logout-btn");
         if (!logoutBtn) return;
 
         logoutBtn.addEventListener("click", e => {
             e.preventDefault();
-
-            sessionStorage.setItem("user", JSON.stringify(null));
-
-            if (typeof setLoginLogoutDisplay === "function") {
-                setLoginLogoutDisplay();
-            }
-
-            window.location.href = "/index.html";
+            logout();
         });
+    }
+
+    //logout clear storage
+    function logout() {
+        sessionStorage.clear();
+        localStorage.clear();
+        window.location.href = "/index.html";
     }
 
     //clear local storage checkoutDraf
@@ -445,7 +445,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function guardProtectedPages() {
         const protectedPaths = [
             "/member/profile.html",
-            "/member/orders.html"
+            "/member/orders.html",
+            "/checkout.html",
+            "/receipt.html"
         ];
 
         const currentPath = window.location.pathname;

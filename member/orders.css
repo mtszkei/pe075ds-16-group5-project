@@ -1,0 +1,126 @@
+.orders-page {
+    padding: 80px 20px 200px;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.orders-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.order-id {
+    font-weight: 600;
+    color: #111;
+}
+
+.order-time {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Body */
+.order-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.order-info .label {
+    font-size: 13px;
+    color: #888;
+}
+
+.order-info .value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+}
+
+/* Footer */
+.order-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-order-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: rgb(227, 127, 104);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.view-order-btn:hover {
+    background: rgb(227, 127, 104);
+    transform: translateY(-1px);
+}
+
+/* Empty State */
+.orders-empty {
+    padding: 60px 0;
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    .order-body {
+        grid-template-columns: 1fr;
+    }
+
+    .order-footer {
+        justify-content: center;
+    }
+}
+
+/* Prevent overlap with fixed header/footer */
+body {
+    min-height: 100vh;
+}
+
+/* Optional: if header is fixed */
+#header {
+    position: relative;
+    z-index: 10;
+}
+
+/* Optional: if footer is fixed or tall */
+#footer {
+    position: relative;
+    z-index: 5;
+}

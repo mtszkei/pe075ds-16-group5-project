@@ -1,0 +1,171 @@
+.receipt-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 20px 200px;
+    font-family: "Google Sans Code", "Noto Sans TC", sans-serif;
+}
+
+.receipt-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.receipt-card {
+    border-radius: 16px;
+    padding: 26px 24px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ===== Sections ===== */
+.receipt-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.receipt-row .label {
+    font-size: 14px;
+    color: #777;
+}
+
+.receipt-row .value {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+}
+
+.receipt-row.total .label,
+.receipt-row.total .value {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ===== Divider ===== */
+.receipt-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.receipt-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.receipt-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.item-name {
+    color: #111;
+}
+
+.item-qty {
+    color: #666;
+}
+
+.item-price {
+    font-weight: 500;
+}
+
+.receipt-actions {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.receipt-btn {
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.receipt-btn.primary {
+    color: rgb(227, 127, 104);
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.receipt-btn.primary:hover {
+    background: #e6e6e6;
+}
+
+.receipt-btn.secondary {
+    color: rgb(227, 127, 104);
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.receipt-btn.secondary:hover {
+    background: #e6e6e6;
+}
+
+#download-receipt-btn {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    background: none;
+    color: rgb(227, 127, 104);
+    font-size: 14px;
+    font-family: "Noto Sans TC", sans-serif;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+#download-receipt-btn:hover {
+    background: #e6e6e6;
+    transform: translateY(-1px);
+}
+
+#download-receipt-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+#download-receipt-btn:disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+@media (max-width: 600px) {
+    .receipt-item {
+        grid-template-columns: 1fr auto;
+        row-gap: 4px;
+    }
+
+    .item-price {
+        grid-column: 1 / -1;
+        text-align: right;
+    }
+
+    .receipt-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -118,7 +118,7 @@ function initRegisterAutofill() {
     btn.addEventListener("click", e => {
         e.preventDefault();
 
-        document.getElementById("register-name").value = "Tester3";
+        document.getElementById("register-name").value = "";
         document.getElementById("register-email").value = "tester@example.com";
         document.getElementById("register-password").value = "12345678";
     });
@@ -216,7 +216,7 @@ function initLoginAutofill() {
     btn.addEventListener("click", e => {
         e.preventDefault();
 
-        document.getElementById("login-name").value = "Tester2";
+        document.getElementById("login-name").value = "Tester";
         document.getElementById("login-password").value = "12345678";
     });
 }

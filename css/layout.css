@@ -92,6 +92,7 @@ main {
 .logo {
     display: flex;
     align-items: center;
+    height: 100%;
     gap: 10px;
     text-decoration: none;
     color: #222;
@@ -100,7 +101,7 @@ main {
 .logo-img {
     height: 40px;
     width: 144px;
-    /* padding-right: 5px; */
+    display: block;
 }
 
 body.menu-open .logo {

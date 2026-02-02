@@ -19,8 +19,67 @@
 <body>
     <div id="header"></div>
 
-    <main>
-        
+    <main class="receipt-page">
+        <h1 class="receipt-title">Receipt</h1>
+
+        <div class="receipt-card">
+            <div class="receipt-section">
+                <div class="receipt-row">
+                    <span class="label">Order ID</span>
+                    <span class="value" id="receipt-order-id">—</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Order Time</span>
+                    <span class="value" id="receipt-order-time">—</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Payment</span>
+                    <span class="value" id="receipt-payment">—</span>
+                </div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <div class="receipt-section">
+                <h3 class="section-title">Items</h3>
+
+                <div class="receipt-items" id="receipt-items"></div>
+            </div>
+
+            <div class="receipt-divider"></div>
+
+            <div class="receipt-section">
+                <div class="receipt-row">
+                    <span class="label">Products</span>
+                    <span class="value" id="receipt-products"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Shipping</span>
+                    <span class="value" id="receipt-shipping"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Assembly</span>
+                    <span class="value" id="receipt-assembly"></span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Discount</span>
+                    <span class="value" id="receipt-discount"></span>
+                </div>
+            </div>
+
+            <div class="receipt-section">
+                <div class="receipt-row total">
+                    <span class="label">Total</span>
+                    <span class="value" id="receipt-total"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="receipt-actions">
+            <button id="download-receipt-btn">Download as png</button>
+            <a href="/index.html" class="receipt-btn secondary">Back to Home</a>
+            <a href="/member/orders.html" class="receipt-btn primary">View Orders</a>
+        </div>
     </main>
 
     <div id="footer"></div>
@@ -28,5 +87,6 @@
 
 <script src="/js/layout.js"></script>
 <script src="/js/receipt.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 </html>

@@ -104,6 +104,12 @@ function bindPaymentToggle() {
     radios.forEach(radio => {
         radio.addEventListener("change", () => {
 
+            const draft = getCheckoutDraft();
+            if (draft) {
+                draft.paymentMethod = radio.value;
+                localStorage.setItem("checkoutDraft", JSON.stringify(draft));
+            }
+
             creditCard.classList.remove("active");
             qrCode.classList.remove("active");
             walkIn.classList.remove("active");
@@ -280,31 +286,72 @@ function bindQRPlaceOrder() {
 }
 
 //place order
-function completeOrder() {
-    const modal = document.querySelector(".checkout-modal");
-    if (!modal) return;
+async function completeOrder() {
+    window.showLoader();
 
-    const draft = JSON.parse(localStorage.getItem("checkoutDraft"));
+    try {
+        const user = JSON.parse(sessionStorage.getItem("user"));
+        const draft = JSON.parse(localStorage.getItem("checkoutDraft"));
+        if (!draft) return;
 
-    fetch("https://script.google.com/macros/s/AKfycbyJIuV2Vm2L0z1szoXGEGpwXePA-ZvQJNuITKB4UwyBsjcmPQO_xUXnQAHe1zylwy7E/exec", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            orderTime: new Date().toISOString(),
-            payment: draft.paymentMethod || "unknown",
-            total: draft.total,
-            totalQty: draft.totalQty,
-            items: draft.items
-        })
-    }).catch(err => {
-        console.error("Save to Google failed", err);
-    });
+        const orderId = "ORD-" + Date.now();
 
-    localStorage.removeItem("cart");
-    localStorage.removeItem("checkoutDraft");
-    modal.classList.add("open");
+        const order = {
+            id: orderId,
+            user_id: user?.id || "guest",
+            time: new Date().toISOString(),
+            payment: draft.paymentMethod ?? "unknown",
+
+            productsTotal: draft.productsTotal || 0,
+            deliveryFee: draft.deliveryFee || 0,
+            assemblyFee: draft.assemblyFee || 0,
+            discount: draft.discount || 0,
+
+            total:
+                draft.total ??
+                (draft.productsTotal || 0)
+                + (draft.deliveryFee || 0)
+                + (draft.assemblyFee || 0)
+                - (draft.discount || 0),
+
+            qty:
+                draft.items?.reduce((sum, i) => sum + (i.quantity || 0), 0) || 0,
+
+            items: Array.isArray(draft.items) ? draft.items : []
+        };
+
+        const orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(order);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        localStorage.setItem("lastOrder", JSON.stringify(order));
+
+        try {
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbzZ0bNndTIpNMsVVeXboRlP7UC54i-vEJWOUH_lLBDMmh1jbzH7yDNKJe0WwzxOuVtx/exec?action=createOrder",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain"
+                    },
+                    body: JSON.stringify(order)
+                }
+            );
+        } catch (err) {
+            console.warn("Order saved locally only", err);
+        }
+
+        localStorage.removeItem("cart");
+        localStorage.removeItem("checkoutDraft");
+
+        const modal = document.querySelector(".checkout-expired");
+        if (modal) {
+            modal.classList.add("show");
+        }
+
+    } finally {
+        window.hideLoader();
+    }
 }
 
 //auto fill credit card info
