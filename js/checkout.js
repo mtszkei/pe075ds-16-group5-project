@@ -300,7 +300,7 @@ async function completeOrder() {
             id: orderId,
             user_id: user?.id || "guest",
             time: new Date().toISOString(),
-            payment: draft.paymentMethod ?? "unknown",
+            payment: draft.paymentMethod || "unknown",
 
             productsTotal: draft.productsTotal || 0,
             deliveryFee: draft.deliveryFee || 0,
@@ -315,7 +315,10 @@ async function completeOrder() {
                 - (draft.discount || 0),
 
             qty:
-                draft.items?.reduce((sum, i) => sum + (i.quantity || 0), 0) || 0,
+                draft.items?.reduce(
+                    (sum, i) => sum + (i.quantity || 0),
+                    0
+                ) || 0,
 
             items: Array.isArray(draft.items) ? draft.items : []
         };
@@ -323,7 +326,6 @@ async function completeOrder() {
         const orders = JSON.parse(localStorage.getItem("orders")) || [];
         orders.push(order);
         localStorage.setItem("orders", JSON.stringify(orders));
-
         localStorage.setItem("lastOrder", JSON.stringify(order));
 
         try {
@@ -331,9 +333,7 @@ async function completeOrder() {
                 "https://script.google.com/macros/s/AKfycbzZ0bNndTIpNMsVVeXboRlP7UC54i-vEJWOUH_lLBDMmh1jbzH7yDNKJe0WwzxOuVtx/exec?action=createOrder",
                 {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "text/plain"
-                    },
+                    headers: { "Content-Type": "text/plain" },
                     body: JSON.stringify(order)
                 }
             );
@@ -345,9 +345,7 @@ async function completeOrder() {
         localStorage.removeItem("checkoutDraft");
 
         const modal = document.querySelector(".checkout-expired");
-        if (modal) {
-            modal.classList.add("show");
-        }
+        modal?.classList.add("show");
 
     } finally {
         window.hideLoader();
