@@ -27,16 +27,16 @@
 
             <div class="hero-content">
                 <img src="/src/images/symbols/furmart_logo/furmart_logo_white.png" alt="logo" />
-                <h1>Welcome to our shop</h1>
-                <a href="/shop.html" class="start-to-shop">Start to Shop</a>
+                <h1 data-i18n="index.welcome">Welcome to our shop</h1>
+                <a href="/shop.html" class="start-to-shop" data-i18n="startToShop">Start to Shop</a>
             </div>
         </section>
 
         <section class="carousel">
             <div class="carousel-top">
-                <span>Quick View Products</span>
+                <span data-i18n="index.quickView">Quick View Products</span>
                 <div class="carousel-random">
-                    <span>Refresh</span>
+                    <span data-i18n="index.refresh">Refresh</span>
                     <button class="carousel-random-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
@@ -58,9 +58,9 @@
                         <img class="item-img-carousel-main now" src="/src/images/items/sample.webp" loading="lazy" />
                     </div>
                     <div class="info-contanier">
-                        <span class="carousel-brand">brand</span>
-                        <span class="carousel-name">name</span>
-                        <a href="/shop/item.html?id=?" class="buy-link">Go to buy!</a>
+                        <span class="carousel-brand" data-i18n-placeholder="index.item.brand">brand</span>
+                        <span class="carousel-name" data-i18n-placeholder="index.item.name">name</span>
+                        <a href="/shop/item.html?id=?" class="buy-link" data-i18n="index.item.goToBuy">Go to buy!</a>
                     </div>
                 </div>
                 <img id="next-btn" class="img-carousel-btn" src="/src/images/symbols/next.png">
@@ -79,104 +79,84 @@
                   <span class="hm-icon-number">01</span>
                   <i class="flaticon-free-delivery"></i>
                   <div class="hm-icon-content">
-                    <h4>
-                      Free Shipping <span class="hm-text-primary">.</span>
-                    </h4>
-                    <p class="text-disabled">
-                      Furniture product of design considered decorative art.
-                    </p>
+                    <h4 data-i18n="index.freeShipping.title">Free Shipping <span class="hm-text-primary">.</span></h4>
+                    <p class="text-disabled" data-i18n="index.freeShipping.desc">Furniture product of design considered decorative art.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6">
-                <div class="hm-icon">
-                  <span class="hm-icon-number">02</span>
-                  <i class="flaticon-clock"></i>
-                  <div class="hm-icon-content">
-                    <h4>
-                      24/7 Online Support <span class="hm-text-primary">.</span>
-                    </h4>
-                    <p class="text-disabled">
-                      chairs stools and sofas eating tables and sleeping.
-                    </p>
-                  </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="hm-icon">
+                                <span class="hm-icon-number">02</span>
+                                <i class="flaticon-clock"></i>
+                                <div class="hm-icon-content">
+                                    <h4 data-i18n="index.support.title">24/7 Online Support <span class="hm-text-primary">.</span></h4>
+                                    <p class="text-disabled" data-i18n="index.support.desc">chairs stools and sofas eating tables and sleeping.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="hm-icon">
+                                <span class="hm-icon-number">03</span>
+                                <i class="flaticon-piggy-bank"></i>
+                                <div class="hm-icon-content">
+                                    <h4 data-i18n="index.guarantee.title">Money Back Gaurantee <span class="hm-text-primary">.</span></h4>
+                                    <p class="text-disabled" data-i18n="index.guarantee.desc">Furniture can be made using a variety of woodworking joints.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="hm-icon">
+                                <span class="hm-icon-number">04</span>
+                                <i class="flaticon-credit-card"></i>
+                                <div class="hm-icon-content">
+                                    <h4 data-i18n="index.secure.title">100% Secure Checkout <span class="hm-text-primary">.</span></h4>
+                                    <p class="text-disabled" data-i18n="index.secure.desc">People have been objects such as tree stumps rocks and moss.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-6">
-                <div class="hm-icon">
-                  <span class="hm-icon-number">03</span>
-                  <i class="flaticon-piggy-bank"></i>
-                  <div class="hm-icon-content">
-                    <h4>
-                      Money Back Gaurantee
-                      <span class="hm-text-primary">.</span>
-                    </h4>
-                    <p class="text-disabled">
-                      Furniture can be made using a variety of woodworking
-                      joints.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6">
-                <div class="hm-icon">
-                  <span class="hm-icon-number">04</span>
-                  <i class="flaticon-credit-card"></i>
-                  <div class="hm-icon-content">
-                    <h4>
-                      100% Secure Checkout
-                      <span class="hm-text-primary">.</span>
-                    </h4>
-                    <p class="text-disabled">
-                      People have been objects such as tree stumps rocks and
-                      moss.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="partner-brand">
-        <div class="hm-section pt-0">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand02.png" alt="client" />
+        <section class="partner-brand">
+            <div class="hm-section pt-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand02.png" alt="client" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand03.png" alt="client" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand04.png" alt="client" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand05.png" alt="client" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand02.png" alt="client" />
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6">
+                            <div class="hm-client">
+                                <img src="./src/images/brands/brand03.png" alt="client" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand03.png" alt="client" />
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand04.png" alt="client" />
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand05.png" alt="client" />
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand02.png" alt="client" />
-                </div>
-              </div>
-              <div class="col-md-2 col-sm-6">
-                <div class="hm-client">
-                  <img src="./src/images/brands/brand03.png" alt="client" />
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
     </main>
 

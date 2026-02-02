@@ -21,103 +21,102 @@
     <div id="header"></div>
 
     <main>
-        <h1 class="cartpage-title">Shopping Cart</h1>
+        <h1 class="cartpage-title" data-i18n="cart.shoppingCart">Shopping Cart</h1>
         <section class="cartpage">
             <div class="cart-option">
-                <div class="receive-order">
-                    <h2>How would you like to receive your order?</h2>
-                    <span>Click the button below to check the availability of the shipping area.</span>
+                <div class="receive-order" >
+                    <h2 data-i18n="cart.receiveOrderTitle">How would you like to receive your order?</h2>
+                    <span data-i18n="cart.shippingAreaCheck">Click the button below to check the availability of the shipping area.</span>
                     <div class="receive-method">
                         <input type="radio" id="delivery" name="method" value="delivery">
                         <label for="delivery" class="method-card">
-                            DELIVERY
+                            <span data-i18n="cart.delivery">DELIVERY</span>
                         </label>
 
                         <input type="radio" id="pickup" name="method" value="pickup">
                         <label for="pickup" class="method-card">
-                            PICK-UP
+                            <span data-i18n="cart.pickup">PICK-UP</span>
                         </label>
                     </div>
                 </div>
                 <div class="cartpage-items">
-                    <span class="cart-empyt">- Empty -</span>
-                    <a href="/shop.html" class="start-to-shop">Start to shop</a>
+                    <span class="cart-empyt" data-i18n="cart.empty">- Empty -</span>
+                    <a href="/shop.html" class="start-to-shop" data-i18n="startToShop">Start to Shop</a>
                 </div>
             </div>
 
 
             <div class="order-summary">
-                <h2>Order Summary</h2>
+                <h2 data-i18n="cart.orderSummary">Order Summary</h2>
                 <div class="qty-count">
-                    <span class="summary-subtitle">Total products</span>
+                    <span class="summary-subtitle" data-i18n="totalProducts">Total products</span>
                     <span class="summary-number all-qty"></span>
                 </div>
                 <div class="price-count">
-                    <span class="summary-subtitle">Products</span>
+                    <span class="summary-subtitle" data-i18n="products">Products</span>
                     <span class="summary-number all-products-price"></span>
                 </div>
                 <div class="service-fee">
-                    <span class="summary-subtitle">Delivery service fee</span>
-                    <span class="shipping-method not-select">Please select shipping method</span>
-                    <span class="shipping-method delivery-selected">Delivery ($500)</span>
-                    <span class="shipping-method pickup-selected">Pickup (Free)</span>
+                    <span class="summary-subtitle" data-i18n="cart.deliveryServiceFee">Delivery service fee</span>
+                    <span class="shipping-method not-select" data-i18n="cart.pleaseSelectShipping">Please select shipping method</span>
+                    <span class="shipping-method delivery-selected" data-i18n="cart.deliveryFee">$500</span>
+                    <span class="shipping-method pickup-selected" data-i18n="cart.pickupFee">Free</span>
                 </div>
                 <div class="service-fee">
-                    <span class="summary-subtitle">Total assembly service fee</span>
+                    <span class="summary-subtitle" data-i18n="cart.assemblyServiceFee">Total assembly service fee</span>
                     <span class="summary-number assembly-price"></span>
                 </div>
                 <div id="discount" class="service-fee">
-                    <span class="summary-subtitle">Discount</span>
+                    <span class="summary-subtitle" data-i18n="discount">Discount</span>
                     <span class="summary-number discount-price"></span>
                 </div>
                 <div class="order-total">
-                    <span class="summary-subtitle">Total</span>
+                    <span class="summary-subtitle" data-i18n="total">Total</span>
                     <span class="total-price"></span>
                 </div>
                 <div class="promo-code">
                     <div id="promo-title" class="toggle-btn">
-                        <span>Got a promotional code?(SAVE100)</span>
+                        <span data-i18n="cart.promoCodeQuestion">Got a promotional code? (SAVE100)</span>
                         <span class="toggle-arrow">－</span>
                     </div>
                     <div class="promo-code-toggle">
                         <div class="promo-code-container">
-                            <label class="code-input-text" for="fname">Promotional Code:</label>
+                            <label class="code-input-text" for="fname" data-i18n="cart.promoCodeLabel">Promotional Code:</label>
                             <input class="code-input" type="text" id="fname" name="fname">
-                            <button class="code-apply">Apply</button>
+                            <button class="code-apply" data-i18n="apply">Apply</button>
                         </div>
-                        <div class="promo-code-result success">
+                        <div class="promo-code-result success" data-i18n="cart.promoSuccess">
                             Promotional Code applied successfully!
                         </div>
-                        <div class="promo-code-result fail">
+                        <div class="promo-code-result fail" data-i18n="cart.promoInvalid">
                             Invalid promo code.
                         </div>
                     </div>
                 </div>
                 <div class="check-out">
                     <button class="check-out-btn" disabled>
-                        Check Out
+                        <span data-i18n="cart.checkOut">Check Out</span>
                     </button>
                 </div>
                 <div class="statement-list">
                     <div class="statement">
                         <div class="statement-card toggle-btn">
-                            <span class="statement-title">Secure shopping</span>
+                            <span class="statement-title" data-i18n="cart.secureShopping">Secure shopping</span>
                             <span class="toggle-arrow">－</span>
                         </div>
                         <div class="statement-toggle">
-                            <span class="statement-content">
-                                We use the latest SSL security technology to encrypt all
-                                personal information.
+                            <span class="statement-content" data-i18n="cart.sslSecurity">
+                                We use the latest SSL security technology to encrypt all personal information.
                             </span>
                         </div>
                     </div>
                     <div class="statement">
                         <div class="statement-card toggle-btn">
-                            <span class="statement-title">Payment options</span>
+                            <span class="statement-title" data-i18n="cart.paymentOptions">Payment options</span>
                             <span class="toggle-arrow">－</span>
                         </div>
                         <div class="statement-toggle">
-                            <span class="statement-content">
+                            <span class="statement-content" data-i18n="cart.acceptPayment">
                                 We accept the below payment methods.
                             </span>
                             <div class="payment-methods">
@@ -150,15 +149,12 @@
                     </div>
                     <div class="statement">
                         <div class="statement-card toggle-btn">
-                            <span class="statement-title">Exchange and Return policy</span>
+                            <span class="statement-title" data-i18n="cart.exchangeReturn">Exchange and Return policy</span>
                             <span class="toggle-arrow">－</span>
                         </div>
                         <div class="statement-toggle">
-                            <span class="statement-content">
-                                It's important to us that you're happy with your purchase. If you're not totally
-                                satisfied you can return it within 365 days for an exchange or refund. Read our Exchange
-                                and
-                                Return policy
+                            <span class="statement-content" data-i18n="cart.returnPolicyDesc">
+                                It's important to us that you're happy with your purchase. If you're not totally satisfied you can return it within 365 days for an exchange or refund. Read our Exchange and Return policy
                             </span>
                         </div>
                     </div>
