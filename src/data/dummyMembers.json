@@ -1,9 +1,9 @@
 [
   {
     "id": 2,
-    "name": "DummyUser",
-    "email": "dummy@example.com",
-    "password": "abcd1234"
+    "name": "Tester2",
+    "email": "tester2@example.com",
+    "password": "12345678"
   },
   {
     "id": 3,
