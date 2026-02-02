@@ -12,7 +12,7 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: #d4a3a3;
+  background-color: rgb(227, 127, 104, 0.5);
   width: 100%;
   padding: 10px;
   border: none;
@@ -25,16 +25,15 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #c09090;
+  background-color: rgb(227, 127, 104);
 }
 
 .container {
   border-radius: 5px;
-  /* background-color: #f2f2f2; */
-  /* padding: 20px; */
   width: 50%;
   margin: 20px auto;
 }
+
 .map-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -54,4 +53,76 @@ input[type="submit"]:hover {
 h3 {
   font-size: 30px;
   font-weight: bolder;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 999;
+}
+
+.contact-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-modal-card {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-modal-card h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.contact-modal-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.contact-modal-card button {
+  background-color: rgb(227, 127, 104, 0.5);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 26px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-modal-card button:hover {
+  background-color: rgb(227, 127, 104);
+}
+
+.contact-alert {
+  display: none;
+  margin: 10px 0 16px;
+  padding: 10px 14px;
+
+  border-radius: 6px;
+  color: rgb(227, 127, 104);
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-alert.active {
+  display: block;
 }

@@ -86,6 +86,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    user-select: none;
 }
 
 /* Logo */
@@ -99,8 +100,8 @@ main {
 }
 
 .logo-img {
-    height: 40px;
-    width: 144px;
+    height: clamp(28px, 5vw, 40px);
+    width: auto;
     display: block;
 }
 
@@ -687,6 +688,7 @@ body.menu-open .logo {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    user-select: none;
 }
 
 .footer-title {
