@@ -162,7 +162,12 @@ function initLogin() {
             const result = await res.json();
 
             if (result.success && result.user) {
-                loggedInUser = result.user;
+                loggedInUser = {
+                    id: result.user.id,
+                    name: result.user.name,
+                    email: result.user.email,
+                    address: result.user.address || ""
+                };
             }
         } catch (err) {
             console.warn("GAS unavailable, fallback to local JSON", err);
@@ -183,7 +188,8 @@ function initLogin() {
                     loggedInUser = {
                         id: user.id,
                         name: user.name,
-                        email: user.email
+                        email: user.email,
+                        address: user.address
                     };
                 }
             } catch (err) {
