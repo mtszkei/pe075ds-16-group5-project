@@ -100,7 +100,7 @@ main {
 }
 
 .logo-img {
-    height: clamp(28px, 5vw, 40px);
+    height: clamp(35px, 5vw, 50px);
     width: auto;
     display: block;
 }
@@ -612,6 +612,10 @@ body.menu-open .logo {
     overscroll-behavior: contain;
 }
 
+.mobile-logo-img {
+    width: 100%;
+}
+
 .mobile-menu a {
     position: relative;
     text-decoration: none;
@@ -689,6 +693,7 @@ body.menu-open .logo {
     flex-direction: column;
     gap: 12px;
     user-select: none;
+    padding-top: 20px;
 }
 
 .footer-title {
@@ -807,6 +812,10 @@ body.menu-open .logo {
 
 .login-reminder-modal.active {
     display: flex;
+}
+
+.footer-logo-img {
+    width: 200px;
 }
 
 /* Responsive */
