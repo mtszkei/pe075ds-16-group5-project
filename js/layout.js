@@ -193,6 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
+            document.querySelectorAll("[data-i18n-value]").forEach(el => {
+                const key = el.getAttribute("data-i18n-value");
+                if (dict[key]) {
+                    el.value = dict[key];
+                }
+            });
+
             localStorage.setItem("lang", lang);
         } catch (err) {
             console.error("setLanguage error:", err);
@@ -318,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const subtotalEl = document.createElement("div");
         subtotalEl.className = "cart-subtotal";
         subtotalEl.innerHTML = `
-            <span>Subtotal</span>
+            <span data-i18n="total">Subtotal</span>
             <strong>$${subtotal.toLocaleString()}</strong>
             `;
 

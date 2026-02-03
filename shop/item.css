@@ -116,6 +116,7 @@ main {
 
 /* buy container */
 .item-buy {
+    width: 310px;
     position: sticky;
     top: 90px;
 

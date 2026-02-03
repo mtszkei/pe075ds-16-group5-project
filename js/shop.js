@@ -110,14 +110,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p class="stock ${stockInfo.className}">${stockInfo.text}</p>
                 </div>
 
-                <a href="/shop/item.html?id=${item.id}" class="buy-link">
+                <a
+                    href="/shop/item.html?id=${item.id}"
+                    class="buy-link"
+                    data-i18n="shop.viewDetail">
                     View detail
                 </a>
 
                 <button
                     data-id="${item.id}"
                     ${isOutOfStock ? "disabled" : ""}
-                    class="add-to-cart-btn ${isOutOfStock ? "btn-disabled" : ""}">
+                    class="add-to-cart-btn ${isOutOfStock ? "btn-disabled" : ""}"
+                    data-i18n="addToCart">
                     Add to cart
                 </button>
             </div>

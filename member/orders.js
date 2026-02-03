@@ -86,23 +86,23 @@ function renderOrders(orders) {
 
             <div class="order-body">
                 <div class="order-info">
-                    <span class="label">Payment</span>
+                    <span class="label" data-i18n="orders.payment">Payment</span>
                     <span class="value">${formatPayment(order.payment)}</span>
                 </div>
 
                 <div class="order-info">
-                    <span class="label">Total</span>
+                    <span class="label" data-i18n="total">Total</span>
                     <span class="value">$${order.total}</span>
                 </div>
 
                 <div class="order-info">
-                    <span class="label">Qty</span>
+                    <span class="label" data-i18n="orders.qty">Qty</span>
                     <span class="value">${order.qty}</span>
                 </div>
             </div>
 
             <div class="order-footer">
-                <button class="view-order-btn" data-id="${order.id}">
+                <button class="view-order-btn" data-id="${order.id}" data-i18n="orders.viewDetails">
                     View Details
                 </button>
             </div>

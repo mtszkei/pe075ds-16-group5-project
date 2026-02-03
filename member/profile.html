@@ -22,32 +22,33 @@
 
     <main class="profile-page">
         <section class="profile-card">
-            <h1 class="profile-title">My Profile</h1>
+            <h1 class="profile-title" data-i18n="profile.title">My Profile</h1>
 
             <div class="profile-row">
-                <span class="profile-label">User ID</span>
+                <span class="profile-label" data-i18n="profile.userId">User ID</span>
                 <span class="profile-value" id="profile-id">—</span>
             </div>
 
             <div class="profile-row">
-                <span class="profile-label">Name</span>
+                <span class="profile-label" data-i18n="memberName">Name</span>
                 <span class="profile-value" id="profile-name">—</span>
             </div>
 
             <div class="profile-row">
-                <span class="profile-label">Email</span>
+                <span class="profile-label" data-i18n="email">Email</span>
                 <span class="profile-value" id="profile-email">—</span>
             </div>
 
             <div class="profile-row profile-address">
-                <span class="profile-label">Address</span>
+                <span class="profile-label" data-i18n="address">Address</span>
                 <span class="profile-value" id="profile-address-display">—</span>
-                <input type="text" id="profile-address" class="profile-input" placeholder="Enter your address" />
+                <input type="text" id="profile-address" class="profile-input" placeholder="Enter your address"
+                    data-i18n-placeholder="profile.enterAddress" />
             </div>
 
             <div class="profile-actions">
-                <button class="profile-save-btn" disabled>
-                    Save Address
+                <button class="profile-save-btn" disabled data-i18n="profile.save">
+                    Save
                 </button>
             </div>
         </section>
