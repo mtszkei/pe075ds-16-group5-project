@@ -20,20 +20,20 @@
     <div id="header"></div>
 
     <main class="receipt-page">
-        <h1 class="receipt-title">Receipt</h1>
+        <h1 class="receipt-title" data-i18n="receipt">Receipt</h1>
 
         <div class="receipt-card">
             <div class="receipt-section">
                 <div class="receipt-row">
-                    <span class="label">Order ID</span>
+                    <span class="label" data-i18n="receipt.orderId">Order ID</span>
                     <span class="value" id="receipt-order-id">—</span>
                 </div>
                 <div class="receipt-row">
-                    <span class="label">Order Time</span>
+                    <span class="label" data-i18n="receipt.orderTime">Order Time</span>
                     <span class="value" id="receipt-order-time">—</span>
                 </div>
                 <div class="receipt-row">
-                    <span class="label">Payment</span>
+                    <span class="label" data-i18n="Payment">Payment</span>
                     <span class="value" id="receipt-payment">—</span>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="receipt-divider"></div>
 
             <div class="receipt-section">
-                <h3 class="section-title">Items</h3>
+                <h3 class="section-title" data-i18n="receipt.items">Items</h3>
 
                 <div class="receipt-items" id="receipt-items"></div>
             </div>
@@ -50,35 +50,35 @@
 
             <div class="receipt-section">
                 <div class="receipt-row">
-                    <span class="label">Products</span>
+                    <span class="label" data-i18n="products">Products</span>
                     <span class="value" id="receipt-products"></span>
                 </div>
                 <div class="receipt-row">
-                    <span class="label">Shipping</span>
+                    <span class="label" data-i18n="shipping">Shipping</span>
                     <span class="value" id="receipt-shipping"></span>
                 </div>
                 <div class="receipt-row">
-                    <span class="label">Assembly</span>
+                    <span class="label" data-i18n="assembly">Assembly</span>
                     <span class="value" id="receipt-assembly"></span>
                 </div>
                 <div class="receipt-row">
-                    <span class="label">Discount</span>
+                    <span class="label" data-i18n="discount">Discount</span>
                     <span class="value" id="receipt-discount"></span>
                 </div>
             </div>
 
             <div class="receipt-section">
                 <div class="receipt-row total">
-                    <span class="label">Total</span>
+                    <span class="label" data-i18n="total">Total</span>
                     <span class="value" id="receipt-total"></span>
                 </div>
             </div>
         </div>
 
         <div class="receipt-actions">
-            <button id="download-receipt-btn">Download as png</button>
-            <a href="/index.html" class="receipt-btn secondary">Back to Home</a>
-            <a href="/member/orders.html" class="receipt-btn primary">View Orders</a>
+            <button id="download-receipt-btn" data-i18n="receipt.downloadAsPng">Download as png</button>
+            <a href="/index.html" class="receipt-btn secondary" data-i18n="receipt.backToHome">Back to Home</a>
+            <a href="/member/orders.html" class="receipt-btn primary" data-i18n="viewOrders">View Orders</a>
         </div>
     </main>
 
