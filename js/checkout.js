@@ -31,19 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //=====function=====
 
-//render check out
+// render check out
 function renderCheckout(draft) {
     renderItems(draft.items);
     renderSummary(draft);
 }
 
-// rnder your items
+// render your items
 function renderItems(items = []) {
     const container = document.querySelector(".checkout-items");
     if (!container) return;
 
     if (items.length === 0) {
-        container.innerHTML = "<p>No items</p>";
+        container.innerHTML = "<p data-i18n='noItems'>No items</p>";
         return;
     }
 
