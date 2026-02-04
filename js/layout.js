@@ -270,7 +270,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 emptyEl.style.display = "flex";
             }
 
-            dropdown.querySelector(".cart-subtotal")?.remove();
+//            dropdown.querySelector(".cart-subtotal")?.remove();
+            
+            const cartSubtotal = dropdown.querySelector("#cartSubtotal").children;
+            cartSubtotal[1].textContent = '$0';
+            cartSubtotal[0].style.display = 'none';
+            cartSubtotal[1].style.display = 'none';
+
             updateCartCount();
             return;
         }
@@ -320,6 +326,12 @@ document.addEventListener("DOMContentLoaded", () => {
             itemsContainer.appendChild(div);
         });
 
+        
+        const cartSubtotal = dropdown.querySelector("#cartSubtotal").children;
+        cartSubtotal[1].textContent = '$' + subtotal.toLocaleString();
+        cartSubtotal[0].style.display = 'inline';
+        cartSubtotal[1].style.display = 'inline';
+/*
         dropdown.querySelector(".cart-subtotal")?.remove();
 
         const subtotalEl = document.createElement("div");
@@ -333,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subtotalEl,
             dropdown.querySelector(".go-to-cart-btn")
         );
-
+*/
         updateCartCount();
     }
 
