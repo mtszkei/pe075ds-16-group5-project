@@ -91,12 +91,12 @@ function showEmptyReceipt() {
     if (!page) return;
 
     page.innerHTML = `
-        <h1 class="receipt-title">Order Not Found</h1>
+        <h1 class="receipt-title" data-i18n="receipt.orderNotFound">Order Not Found</h1>
         <div class="receipt-card">
-            <p>This order cannot be found.</p>
+            <p data-i18n="receipt.orderNotFoundDesc">This order cannot be found.</p>
             <div class="receipt-actions">
-                <a href="/member/orders.html" class="receipt-btn primary">View Orders</a>
-                <a href="/index.html" class="receipt-btn secondary">Back to Home</a>
+                <a href="/member/orders.html" class="receipt-btn primary" data-i18n="viewOrders">View Orders</a>
+                <a href="/index.html" class="receipt-btn secondary" data-i18n="receipt.backToHome">Back to Home</a>
             </div>
         </div>
     `;
