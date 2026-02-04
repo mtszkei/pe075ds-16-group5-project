@@ -129,16 +129,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (specEl) {
             specEl.innerHTML = `
             <div class="spec-block">
-                <h4>Description</h4>
+                <h4 data-i18n="item.description">Description</h4>
                 <p class="spec-desc">${item.description}</p>
             </div>
 
             <div class="spec-block">
-                <h4>Measurements</h4>
+                <h4 data-i18n="item.measurements">Measurements</h4>
                 <ul class="spec-measure">
-                    <li><span>Width</span><span>${item.measurements[0].max_width} mm</span></li>
-                    <li><span>Depth</span><span>${item.measurements[0].max_depth} mm</span></li>
-                    <li><span>Height</span><span>${item.measurements[0].max_height} mm</span></li>
+                    <li><span data-i18n="item.width">Width</span><span>${item.measurements[0].max_width}<span data-i18n="item.mm">mm</span></span></li>
+                    <li><span data-i18n="item.depth">Depth</span><span>${item.measurements[0].max_depth}<span data-i18n="item.mm">mm</span></span></li>
+                    <li><span data-i18n="item.height">Height</span><span>${item.measurements[0].max_height}<span data-i18n="item.mm">mm</span></span></li>
                 </ul>
             </div>
         `;
