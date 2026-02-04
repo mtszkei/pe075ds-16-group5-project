@@ -277,8 +277,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!cartItems || cartItems.length === 0) {
             container.innerHTML = `
-            <span class="cart-empyt">- Empty -</span>
-            <a href="/shop.html" class="start-to-shop">Start to shop</a>
+            <span class="cart-empyt" data-i18n="cart.empty">- Empty -</span>
+            <a href="/shop.html" class="start-to-shop" data-i18n="startToShop">Start to shop</a>
         `;
             return;
         }
@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             data-price="200"
                             ${assemblySelections.has(item.id) ? "checked" : ""}
                         />
-                        <label for="assembly-${item.id}" class="assembly-label">
+                        <label for="assembly-${item.id}" class="assembly-label" data-i18n="cart.assemblyService">
                             Assembly service ($200/each)
                         </label>
                     </div>
