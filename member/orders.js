@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!user) {
         listEl.innerHTML = `
             <div class="orders-empty">
-                <p>Please login to view your orders.</p>
+                <p data-i18n="order.loginToView">Please login to view your orders.</p>
             </div>
         `;
         return;
@@ -28,7 +28,7 @@ async function fetchOrdersFromGAS(userId) {
 
     listEl.innerHTML = `
         <div class="orders-empty">
-            <p>Loading orders...</p>
+            <p data-i18n="order.loadingOrder">Loading orders...</p>
         </div>
     `;
 
@@ -53,7 +53,7 @@ async function fetchOrdersFromGAS(userId) {
 
         listEl.innerHTML = `
             <div class="orders-empty">
-                <p>No orders found.</p>
+                <p data-i18n="order.noOrderFound">No orders found.</p>
             </div>
         `;
     }
@@ -66,7 +66,7 @@ function renderOrders(orders) {
     if (orders.length === 0) {
         listEl.innerHTML = `
             <div class="orders-empty">
-                <p>No orders yet.</p>
+                <p data-i18n="order.noOrderFound">No orders yet.</p>
             </div>
         `;
         return;
@@ -80,13 +80,13 @@ function renderOrders(orders) {
     listEl.innerHTML = sortedOrders.map(order => `
         <div class="order-card">
             <div class="order-header">
-                <span class="order-id">Order #${order.id}</span>
+                <span class="order-id"><span data-i18n="order.order">Order</span> #${order.id}</span>
                 <span class="order-time">${formatTime(order.time)}</span>
             </div>
 
             <div class="order-body">
                 <div class="order-info">
-                    <span class="label" data-i18n="orders.payment">Payment</span>
+                    <span class="label" data-i18n="Payment">Payment</span>
                     <span class="value">${formatPayment(order.payment)}</span>
                 </div>
 
@@ -96,13 +96,13 @@ function renderOrders(orders) {
                 </div>
 
                 <div class="order-info">
-                    <span class="label" data-i18n="orders.qty">Qty</span>
+                    <span class="label" data-i18n="order.qty">Qty</span>
                     <span class="value">${order.qty}</span>
                 </div>
             </div>
 
             <div class="order-footer">
-                <button class="view-order-btn" data-id="${order.id}" data-i18n="orders.viewDetails">
+                <button class="view-order-btn" data-id="${order.id}" data-i18n="shop.viewDetail">
                     View Details
                 </button>
             </div>

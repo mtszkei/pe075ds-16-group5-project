@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h3>${item.brand} ${item.name}</h3>
 
                 <div class="price-stock">
-                    <p class="price">Price : $${item.price}</p>
-                    <p class="stock ${stockInfo.className}">${stockInfo.text}</p>
+                    <p class="price"><span data-i18n="price">Price</span> : $${item.price}</p>
+                    <p class="stock ${stockInfo.className}" data-i18n="shop.${stockInfo.className}">${stockInfo.text}</p>
                 </div>
 
                 <a
