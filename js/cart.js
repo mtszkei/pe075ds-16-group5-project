@@ -520,10 +520,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const delivery = document.getElementById("delivery");
         const pickup = document.getElementById("pickup");
 
-        const hasSelected =
+        const hasSelectedMethod =
             delivery?.checked || pickup?.checked;
 
-        checkoutBtn.disabled = !hasSelected;
+        const cart = getCartFromStorage();
+        const hasItems = Array.isArray(cart) && cart.length > 0;
+
+        checkoutBtn.disabled = !(hasSelectedMethod && hasItems);
     }
 
 });
