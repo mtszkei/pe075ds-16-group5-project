@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Filter
     async function applyCategoryFilter() {
-        window.showLoader?.();
+        window.showLoader();
         try {
             const selectedCategories = Array.from(categoryCheckboxes)
                 .filter(cb => cb.checked)
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 300
             );
         } finally {
-            window.hideLoader?.();
+            window.hideLoader();
         }
     }
 

@@ -102,17 +102,19 @@ function showEmptyReceipt() {
     `;
 }
 
-document.getElementById("download-receipt-btn")?.addEventListener("click", () => {
+document.getElementById("download-receipt-btn")
+  ?.addEventListener("click", async () => {
+
     const receipt = document.querySelector(".receipt-card");
     if (!receipt) return;
 
-    html2canvas(receipt, {
+    const canvas = await html2canvas(receipt, {
         scale: 2,
         backgroundColor: "#ffffff"
-    }).then(canvas => {
-        const link = document.createElement("a");
-        link.download = `receipt-${Date.now()}.png`;
-        link.href = canvas.toDataURL("image/png");
-        link.click();
     });
+
+    const link = document.createElement("a");
+    link.download = `receipt-${Date.now()}.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
 });

@@ -20,7 +20,7 @@
   "loginError": "無效的電郵或密碼",
   "member.tryAgain": "請再重試。",
   "member.enterAnother": "請使用其他。",
-  "registerError": "此電郵已被使用",
+  "registerError": "此用戶名稱已被使用",
   "welcomeBack": "歡迎回來，",
   "welcomeNewMember": "，歡迎加入我們！",
   "autoLoginMessage": "系統將會自動登入。",

@@ -201,7 +201,7 @@ function initLogin() {
 
         if (loggedInUser) {
             sessionStorage.setItem("user", JSON.stringify(loggedInUser));
-            window.location.href = "/index.html";
+            window.location.href = "/member/orders.html";
         } else {
             showLoginErrorModal();
         }
