@@ -1,16 +1,16 @@
 [
   {
     "id": 2,
-    "name": "Tester2",
-    "email": "tester2@example.com",
+    "name": "admin2",
+    "email": "admin@admin.com",
     "password": "12345678",
     "address": "Kowloon Bay"
   },
   {
     "id": 3,
-    "name": "Another User",
-    "email": "another@example.com",
-    "password": "abcd1234",
+    "name": "Tester2",
+    "email": "tester@example.com",
+    "password": "12345678",
     "address": "Kowloon Bay"
   }
 ]

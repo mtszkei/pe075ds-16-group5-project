@@ -1,0 +1,202 @@
+function doPost(e) {
+  try {
+    const action = e.parameter.action || "register";
+    const raw = e.postData && e.postData.contents;
+    const data = raw ? JSON.parse(raw) : {};
+
+    // ===== other actions =====
+    if (action === "createOrder") {
+      return handleCreateOrder(data);
+    }
+
+    if (action === "updateAddress") {
+      return handleUpdateAddress(data);
+    }
+
+    // ===== register =====
+    const name = String(data.name || "").trim().toLowerCase();
+    if (!name) {
+      return json({ success: false, reason: "INVALID_NAME" });
+    }
+
+    const ss = SpreadsheetApp.openById(
+      "1WFzzntEEs2bKRefftv5G7LxfBiP5Un2Zj5OY8R0oybo"
+    );
+    const sheet = ss.getSheetByName("Users");
+
+    const lastRow = sheet.getLastRow();
+    if (lastRow > 1) {
+      const rows = sheet.getRange(2, 1, lastRow - 1, 6).getValues();
+
+      // 🔍 檢查 name 是否重複
+      for (const row of rows) {
+        const existName = String(row[1] || "").trim().toLowerCase();
+        if (existName === name) {
+          return json({ success: false, reason: "DUPLICATE_NAME" });
+        }
+      }
+    }
+
+    const id = Date.now();
+    sheet.appendRow([
+      id,                         // A
+      data.name.trim(),           // B
+      data.email || "",           // C
+      0,                           // D
+      data.password || "",        // E
+      data.address || ""          // F
+    ]);
+
+    return json({ success: true });
+
+  } catch (err) {
+    return json({ success: false, error: err.message });
+  }
+}
+
+function doGet(e) {
+  try {
+    const action = e.parameter.action || "";
+
+    if (action === "getOrders") {
+      return handleGetOrders(e);
+    }
+
+    // ===== login =====
+    const name = String(e.parameter.name || "").trim().toLowerCase();
+    const password = String(e.parameter.password || "");
+
+    if (!name || !password) {
+      return json({ success: false, reason: "INVALID_INPUT" });
+    }
+
+    const ss = SpreadsheetApp.openById(
+      "1WFzzntEEs2bKRefftv5G7LxfBiP5Un2Zj5OY8R0oybo"
+    );
+    const sheet = ss.getSheetByName("Users");
+
+    const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, 6).getValues();
+
+    for (const [id, username, email, , pwd, address] of rows) {
+      if (
+        String(username).trim().toLowerCase() === name &&
+        String(pwd) === password
+      ) {
+        return json({
+          success: true,
+          user: { id, name: username, email, address: address || "" }
+        });
+      }
+    }
+
+    return json({ success: false, reason: "NOT_FOUND" });
+
+  } catch (err) {
+    return json({ success: false, error: err.message });
+  }
+}
+
+function handleUpdateAddress(data) {
+  const ss = SpreadsheetApp.openById(
+    "1WFzzntEEs2bKRefftv5G7LxfBiP5Un2Zj5OY8R0oybo"
+  );
+  const sheet = ss.getSheetByName("Users");
+
+  const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, 6).getValues();
+
+  for (let i = 0; i < rows.length; i++) {
+    if (String(rows[i][0]) === String(data.id)) {
+      sheet.getRange(i + 2, 6).setValue(data.address || "");
+      return json({ success: true });
+    }
+  }
+
+  return json({ success: false, reason: "NOT_FOUND" });
+}
+
+function json(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function handleCreateOrder(data) {
+  try {
+    if (!data.id) {
+      return json({ success: false, reason: "MISSING_ORDER_ID" });
+    }
+
+    const ss = SpreadsheetApp.openById(
+      "1WFzzntEEs2bKRefftv5G7LxfBiP5Un2Zj5OY8R0oybo"
+    );
+    const sheet = ss.getSheetByName("Orders");
+
+    sheet.appendRow([
+      data.id,                    // A
+      data.user_id || "",          // B
+      data.time || new Date().toISOString(), // C
+      data.payment || "unknown",   // D
+
+      data.productsTotal || 0,     // E
+      data.deliveryFee || 0,       // F
+      data.assemblyFee || 0,       // G
+      data.discount || 0,          // H
+
+      data.total || 0,             // I
+      data.qty || 0,               // J
+      JSON.stringify(data.items || []) // K
+    ]);
+
+    return json({ success: true });
+
+  } catch (err) {
+    return json({ success: false, error: err.message });
+  }
+}
+
+function handleGetOrders(e) {
+  try {
+    const userId = e.parameter.user_id;
+    if (!userId) {
+      return json({ success: false, reason: "MISSING_USER_ID" });
+    }
+
+    const ss = SpreadsheetApp.openById(
+      "1WFzzntEEs2bKRefftv5G7LxfBiP5Un2Zj5OY8R0oybo"
+    );
+    const sheet = ss.getSheetByName("Orders");
+
+    const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, 11).getValues();
+
+    const orders = rows
+      .filter(r => String(r[1]) === String(userId))
+      .map(r => ({
+        id: r[0],
+        user_id: r[1],
+        time: r[2],
+        payment: r[3],
+
+        productsTotal: r[4],
+        deliveryFee: r[5],
+        assemblyFee: r[6],
+        discount: r[7],
+
+        total: r[8],
+        qty: r[9],
+        items: safeParseJSON(r[10])
+      }));
+
+    return json({ success: true, orders });
+
+  } catch (err) {
+    return json({ success: false, error: err.message });
+  }
+}
+
+function safeParseJSON(str) {
+  try {
+    return JSON.parse(str);
+  } catch {
+    return [];
+  }
+}
